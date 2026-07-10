@@ -17,3 +17,9 @@ enum CHARACTER {
 	CHEF,
 	SOUSCHEF,
 }
+
+const NAMES_TO_CHARACTER = {
+	"you":CHARACTER.YOU,
+	"chef":CHARACTER.CHEF,
+	"cochef":CHARACTER.SOUSCHEF,
+}

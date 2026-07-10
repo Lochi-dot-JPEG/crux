@@ -1,8 +1,17 @@
-# Godot Game Template
+#
 
-## Setup Guide
+## Dialogue Format
 
-1. Clone this git repo
-2. Configure template in scripts/globals.gd, e.g. changing GAME\_NAME
-3. test
+Dialogue is stored in csv files
 
+The first value in each line is the speaker.
+The second value is the action they should be doing
+The third value is the line of dialogue to say
+
+e.g.
+
+you,normal,This is what I say
+
+### Character Names
+
+captain (normal, thinking)
