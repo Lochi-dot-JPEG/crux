@@ -9,3 +9,4 @@ extends Resource
 @export var sous_chef_name = "Sous-Chef"
 
 @export var character_names = {}
+@export var keywords = {}

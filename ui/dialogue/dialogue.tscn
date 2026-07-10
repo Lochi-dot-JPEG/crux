@@ -2,6 +2,18 @@
 
 [ext_resource type="Script" uid="uid://0k8onrk83e4w" path="res://ui/dialogue/dialogue.gd" id="1_8q5o4"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8q5o4"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
 [node name="Dialogue" type="Control" unique_id=205847605]
 layout_mode = 3
 anchors_preset = 15
@@ -39,7 +51,47 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Name Here"
 
-[node name="Line" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=571937196]
+[node name="Line" type="RichTextLabel" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=542358535]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
 text = "What to say here"
+
+[node name="QuestionBox" type="PanelContainer" parent="." unique_id=1406485298]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8q5o4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="QuestionBox" unique_id=438054048]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Question" type="Label" parent="QuestionBox/VBoxContainer" unique_id=689532169]
+unique_name_in_owner = true
+layout_mode = 2
+text = "What is the crux of... "
+
+[node name="TextEdit" type="TextEdit" parent="QuestionBox/VBoxContainer" unique_id=1718772237]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+placeholder_text = "the chef's name"
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Confirm" type="Button" parent="QuestionBox/VBoxContainer" unique_id=1042147796]
+unique_name_in_owner = true
+layout_mode = 2
+text = "That's the crux of it!"
