@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Globals="*uid://b6ti560xlnl26"
+Save="*uid://fy54kb5jjpn2"
 
 [display]
 
