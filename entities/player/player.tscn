@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://cc6kldh72h875"]
 
 [ext_resource type="Script" uid="uid://cj3p08b773fwd" path="res://entities/player/player_character_body_2d.gd" id="1_symyc"]
-[ext_resource type="SpriteFrames" uid="uid://lt7n6j1o6tm5" path="res://spritesheets/test.tres" id="2_abrql"]
+[ext_resource type="SpriteFrames" uid="uid://homlyqkfjtjl" path="res://sprites/player.tres" id="2_abrql"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2tu2c"]
-radius = 322.02484
+radius = 124.01613
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qnpof"]
 radius = 58.034473
@@ -22,6 +22,7 @@ shape = SubResource("CircleShape2D_2tu2c")
 debug_color = Color(0.5647387, 0.5585411, 0, 0.41960785)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=872002131]
+scale = Vector2(0.035, 0.035)
 sprite_frames = ExtResource("2_abrql")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1555644577]

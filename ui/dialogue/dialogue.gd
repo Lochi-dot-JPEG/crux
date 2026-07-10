@@ -1,11 +1,5 @@
 extends Control
 
-enum CHARACTER {
-	YOU,
-	CHEF,
-	SOUSCHEF,
-}
-
 @onready var name_label : Label = %Name
 @onready var text_label : RichTextLabel = %Line
 
@@ -17,9 +11,9 @@ enum CHARACTER {
 var keyword_regex = RegEx.create_from_string("\\[([^\\]]*)\\]")
 
 func _ready() -> void:
-	_show_dialogue_line(CHARACTER.YOU,"This is a [vegetable] test [second regexed keyword] dialogue line")
+	_show_dialogue_line(Globals.CHARACTER.YOU,"This is a [vegetable] test [second regexed keyword] dialogue line")
 
-func _show_dialogue_line(character : CHARACTER, text : String):
+func _show_dialogue_line(character : Globals.CHARACTER, text : String):
 	show()
 	var converted_text = await _substitute_keywords(text)
 	print(converted_text)
@@ -63,7 +57,7 @@ func _substitute_keywords(text) -> String:
 	return converted_text
 
 
-func _get_character_name(character : CHARACTER) -> String:
+func _get_character_name(character : Globals.CHARACTER) -> String:
 	return "Their name" # TODO
 
 
@@ -71,5 +65,3 @@ func _on_text_edit_text_changed() -> void:
 	if text_edit.text.find("\n") != -1:
 		text_edit.text = text_edit.text.replace("\n", "")
 		text_edit.set_caret_column(text_edit.text.length())
-
-

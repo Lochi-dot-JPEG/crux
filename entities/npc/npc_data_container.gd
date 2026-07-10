@@ -1,15 +1,11 @@
 extends Node2D
 
-@export var npcID:int
-@export var npcAnimatedSprite:AnimatedSprite2D
+@export var npcEnum : Globals.CHARACTER
+@export var npcAnimatedSprite : AnimatedSprite2D
 
 func update_sprite():
-	match npcID:
-		1:
+	match npcEnum:
+		Globals.CHARACTER.CHEF:
 			pass
-		2:
-			pass
-		3:
-			pass
-		4:
+		Globals.CHARACTER.SOUSCHEF:
 			pass
