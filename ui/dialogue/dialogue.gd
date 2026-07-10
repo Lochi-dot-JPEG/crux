@@ -14,7 +14,7 @@ var loaded_lines : Array[DialogueLine] = []
 var current_line : int = 0
 
 func _ready() -> void:
-	pass
+	_load_dialogue("test")
 
 
 func _next_line() -> void:
@@ -32,7 +32,7 @@ func _show_dialogue_line(line_number : int):
 	var converted_text = await _substitute_keywords(_line.text)
 	print(converted_text)
 	# TODO load animation here
-	var character_name = _get_character_name(_line.character)
+	var character_name = await _get_character_name(_line.character)
 	text_label.text = converted_text
 	name_label.text = character_name
 
@@ -54,9 +54,26 @@ func _ensure_keyword_exists(keyword_id : String):
 		Globals.loaded_save.keywords[keyword_id] = text_edit.text
 		question_box.hide()
 
+func _ensure_name_exists(character : Globals.CHARACTER):
+	if character not in Globals.loaded_save.character_names.keys():
+		var character_role_name = Globals.CHARACTER_TO_ROLE[character]
+
+		var valid_find = false
+		_show_question("What is your " + character_role_name + "'s name?")
+		while not valid_find:
+			await confirm_button.pressed
+			if text_edit.text != "":
+				valid_find = true
+			# TODO confirm if they really want this name
+		Globals.loaded_save.character_names[character] = text_edit.text
+		question_box.hide()
+
+
 func _show_question(question : String):
 	question_box.show()
 	text_edit.text = ""
+	text_edit.grab_focus()
+	text_edit.placeholder_text = ""
 	question_label.text = question
 
 func _substitute_keywords(text) -> String:
@@ -73,7 +90,8 @@ func _substitute_keywords(text) -> String:
 
 
 func _get_character_name(character : Globals.CHARACTER) -> String:
-	return "Their name" # TODO
+	await _ensure_name_exists(character)
+	return Globals.loaded_save.character_names[character]
 
 
 func _load_dialogue(file : String) -> void:
@@ -86,3 +104,4 @@ func _on_text_edit_text_changed() -> void:
 	if text_edit.text.find("\n") != -1:
 		text_edit.text = text_edit.text.replace("\n", "")
 		text_edit.set_caret_column(text_edit.text.length())
+		confirm_button.pressed.emit()

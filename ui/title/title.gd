@@ -15,6 +15,7 @@ func _ready() -> void:
 
 	play_button.pressed.connect(_play)
 	settings_button.pressed.connect(_settings)
+	play_button.grab_focus()
 
 func _play() -> void:
 	get_tree().change_scene_to_file(Globals.MAIN_SCENE_FILE)
