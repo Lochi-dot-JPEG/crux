@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cg8bqbaxe01b6"]
+
+[ext_resource type="Script" uid="uid://buyngbvy4yqe2" path="res://ui/settings/settings.gd" id="1_bjc66"]
+
+[node name="Settings" type="Control" unique_id=288635061]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bjc66")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1554576840]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

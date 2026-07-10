@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bh3nol7uig0r3"]
+
+[node name="Placeholder" type="Node2D" unique_id=834627956]
+
+[node name="Label" type="Label" parent="." unique_id=1722678189]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Put your game in this scene"

@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://tyrg4dwr2d8p"]
+
+[ext_resource type="Script" uid="uid://bbpyravjmvioi" path="res://ui/title/title.gd" id="1_7vilc"]
+
+[node name="Title" type="Control" unique_id=253667116]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7vilc")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=384826489]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer" unique_id=728246280]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer2" unique_id=1777531206]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Your game title will be loaded to here"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer2" unique_id=2060670447]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer2/VBoxContainer" unique_id=1816392289]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Play"
+
+[node name="Settings" type="Button" parent="MarginContainer/VBoxContainer2/VBoxContainer" unique_id=1433669644]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Settings"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer2/VBoxContainer" unique_id=2086630907]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quit"
