@@ -58,11 +58,18 @@ func _substitute_keywords(text) -> String:
 	var converted_text = text
 
 	for key in Globals.loaded_save.keywords.keys():
-		print("key is " + key)
-		converted_text = converted_text.replace(key, "[color=yellow]"+ Globals.loaded_save.keywords[key] + "[/color]")
+		converted_text = converted_text.replace(key, "[color=red]"+ Globals.loaded_save.keywords[key] + "[/color]")
 	
-	return converted_text # TODO
+	return converted_text
 
 
 func _get_character_name(character : CHARACTER) -> String:
 	return "Their name" # TODO
+
+
+func _on_text_edit_text_changed() -> void:
+	if text_edit.text.find("\n") != -1:
+		text_edit.text = text_edit.text.replace("\n", "")
+		text_edit.set_caret_column(text_edit.text.length())
+
+
