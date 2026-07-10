@@ -72,6 +72,7 @@ func _ensure_name_exists(character : Globals.CHARACTER):
 func _show_question(question : String):
 	question_box.show()
 	text_edit.text = ""
+	text_edit.grab_focus()
 	text_edit.placeholder_text = ""
 	question_label.text = question
 
@@ -103,3 +104,4 @@ func _on_text_edit_text_changed() -> void:
 	if text_edit.text.find("\n") != -1:
 		text_edit.text = text_edit.text.replace("\n", "")
 		text_edit.set_caret_column(text_edit.text.length())
+		confirm_button.pressed.emit()
