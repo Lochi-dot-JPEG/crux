@@ -67,6 +67,9 @@ func _get_character_name(character : CHARACTER) -> String:
 	return "Their name" # TODO
 
 
+func _load_dialogue() -> String
+
+
 func _on_text_edit_text_changed() -> void:
 	if text_edit.text.find("\n") != -1:
 		text_edit.text = text_edit.text.replace("\n", "")
