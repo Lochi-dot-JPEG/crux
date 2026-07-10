@@ -8,3 +8,4 @@ extends Resource
 @export var chef_name = "Head Chef"
 @export var sous_chef_name = "Sous-Chef"
 
+@export var character_names = {}
