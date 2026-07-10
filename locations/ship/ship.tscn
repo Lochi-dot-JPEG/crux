@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cv57pjnfect3e"]
+
+[ext_resource type="PackedScene" uid="uid://cc6kldh72h875" path="res://entities/player/player.tscn" id="1_86fik"]
+[ext_resource type="PackedScene" uid="uid://bhobs6j062fxk" path="res://entities/npc/npc.tscn" id="2_5674f"]
+
+[node name="Ship" type="Node2D" unique_id=1802894920]
+
+[node name="Player" parent="." unique_id=1506923292 instance=ExtResource("1_86fik")]
+position = Vector2(1, 2)
+
+[node name="Npc" parent="." unique_id=1131074689 instance=ExtResource("2_5674f")]
+position = Vector2(728, 299)
+npcID = 2
