@@ -30,3 +30,9 @@ func dialogue_target_camera(target_character : CHARACTER):
 		break
 	await get_tree().create_timer(1).timeout
 	camera.reset_target()
+
+const NAMES_TO_CHARACTER = {
+	"you":CHARACTER.YOU,
+	"chef":CHARACTER.CHEF,
+	"cochef":CHARACTER.SOUSCHEF,
+}

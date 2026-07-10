@@ -10,14 +10,29 @@ extends Control
 
 var keyword_regex = RegEx.create_from_string("\\[([^\\]]*)\\]")
 
-func _ready() -> void:
-	_show_dialogue_line(Globals.CHARACTER.YOU,"This is a [vegetable] test [second regexed keyword] dialogue line")
+var loaded_lines : Array[DialogueLine] = []
+var current_line : int = 0
 
-func _show_dialogue_line(character : Globals.CHARACTER, text : String):
+func _ready() -> void:
+	pass
+
+
+func _next_line() -> void:
+	current_line += 1
+	if current_line >= loaded_lines.size():
+		loaded_lines = []
+		hide()
+		return
+	_show_dialogue_line(current_line)
+
+
+func _show_dialogue_line(line_number : int):
+	var _line : DialogueLine = loaded_lines[line_number]
 	show()
-	var converted_text = await _substitute_keywords(text)
+	var converted_text = await _substitute_keywords(_line.text)
 	print(converted_text)
-	var character_name = _get_character_name(character)
+	# TODO load animation here
+	var character_name = _get_character_name(_line.character)
 	text_label.text = converted_text
 	name_label.text = character_name
 
@@ -25,7 +40,7 @@ func _input(event: InputEvent) -> void:
 	if not visible:
 		return
 	if not question_box.visible and event.is_action_pressed("next_dialogue"):
-		hide()
+		_next_line()
 
 func _ensure_keyword_exists(keyword_id : String):
 	if keyword_id not in Globals.loaded_save.keywords.keys():
@@ -59,6 +74,12 @@ func _substitute_keywords(text) -> String:
 
 func _get_character_name(character : Globals.CHARACTER) -> String:
 	return "Their name" # TODO
+
+
+func _load_dialogue(file : String) -> void:
+	loaded_lines = DialogueLine._load_dialogue_file(file)
+	current_line = -1
+	_next_line()
 
 
 func _on_text_edit_text_changed() -> void:

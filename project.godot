@@ -33,6 +33,10 @@ project/assembly_name="crux"
 
 characters="contains all NPCs"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/csv-data-importer/plugin.cfg")
+
 [gui]
 
 theme/custom="uid://bxroux3q0c77q"
