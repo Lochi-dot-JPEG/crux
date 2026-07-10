@@ -29,6 +29,10 @@ window/stretch/aspect="expand"
 
 project/assembly_name="crux"
 
+[global_group]
+
+characters="contains all NPCs"
+
 [gui]
 
 theme/custom="uid://bxroux3q0c77q"

@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://bhobs6j062fxk"]
 
-[ext_resource type="Script" uid="uid://wt627uxvt6bu" path="res://entities/npc/npc_data_container.gd" id="1_e3lg2"]
+[ext_resource type="Script" uid="uid://wt627uxvt6bu" path="res://entities/npc/npc.gd" id="1_e3lg2"]
 [ext_resource type="SpriteFrames" uid="uid://lt7n6j1o6tm5" path="res://spritesheets/test.tres" id="1_gwous"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnpof"]
 size = Vector2(135, 139)
 
-[node name="Npc" type="Node2D" unique_id=1131074689]
+[node name="Npc" type="Node2D" unique_id=1131074689 groups=["characters"]]
 script = ExtResource("1_e3lg2")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=73165341]

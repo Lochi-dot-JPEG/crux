@@ -12,9 +12,8 @@ radius = 58.034473
 
 [node name="Player" type="Node2D" unique_id=1506923292]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=823576075 node_paths=PackedStringArray("sprite", "PLAYER_COLLSION_NODE")]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=823576075 node_paths=PackedStringArray("PLAYER_COLLSION_NODE")]
 script = ExtResource("1_symyc")
-sprite = NodePath("Sprite")
 PLAYER_COLLSION_NODE = NodePath(".")
 
 [node name="Area2D" type="Area2D" parent="CharacterBody2D" unique_id=1071848475]

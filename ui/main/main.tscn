@@ -12,12 +12,17 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1971859441]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=73695922]
 handle_input_locally = false
+size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
 [node name="Placeholder" parent="SubViewportContainer/SubViewport" unique_id=834627956 instance=ExtResource("1_3a1op")]
