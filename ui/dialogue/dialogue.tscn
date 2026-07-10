@@ -3,16 +3,12 @@
 [ext_resource type="Script" uid="uid://0k8onrk83e4w" path="res://ui/dialogue/dialogue.gd" id="1_8q5o4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8q5o4"]
-content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
-bg_color = Color(0.101960786, 0.101960786, 0.101960786, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
+bg_color = Color(0.7175533, 0.74, 0.6438, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
 
 [node name="Dialogue" type="Control" unique_id=205847605]
 layout_mode = 3
@@ -60,7 +56,6 @@ text = "What to say here"
 
 [node name="QuestionBox" type="PanelContainer" parent="." unique_id=1406485298]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
