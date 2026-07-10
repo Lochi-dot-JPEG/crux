@@ -21,7 +21,7 @@ func handle_interaction():
 	if not Input.is_action_just_pressed("interact"):
 		return
 	for npc:Node2D in interactable_npcs:
-		print(npc.get_parent().npcID)
+		print(npc.get_parent().npcEnum)
 		npc.get_parent().update_sprite()
 
 func _npc_enter_interaction_area(npc:Node2D):
@@ -32,6 +32,6 @@ func _npc_enter_interaction_area(npc:Node2D):
 func _npc_exit_interaction_area(npc:Node2D):
 	interactable_npcs.erase(npc)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	handle_movement()
 	handle_interaction()

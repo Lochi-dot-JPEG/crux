@@ -12,3 +12,14 @@ var loaded_save : SaveFile
 const MAIN_SCENE_FILE = "res://ui/main/main.tscn"
 const GAME_TITLE = "Your Game Title"
 
+enum CHARACTER {
+	YOU,
+	CHEF,
+	SOUSCHEF,
+}
+
+const NAMES_TO_CHARACTER = {
+	"you":CHARACTER.YOU,
+	"chef":CHARACTER.CHEF,
+	"cochef":CHARACTER.SOUSCHEF,
+}
