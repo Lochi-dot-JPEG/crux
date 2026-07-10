@@ -9,6 +9,30 @@ animations = [{
 "texture": ExtResource("1_iqann")
 }],
 "loop": 1,
-"name": &"default",
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_iqann")
+}],
+"loop": 1,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_iqann")
+}],
+"loop": 1,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_iqann")
+}],
+"loop": 1,
+"name": &"4",
 "speed": 5.0
 }]

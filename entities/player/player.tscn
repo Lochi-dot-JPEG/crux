@@ -3,16 +3,29 @@
 [ext_resource type="Script" uid="uid://cj3p08b773fwd" path="res://entities/player/player_character_body_2d.gd" id="1_symyc"]
 [ext_resource type="SpriteFrames" uid="uid://lt7n6j1o6tm5" path="res://spritesheets/test.tres" id="2_abrql"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_2tu2c"]
+radius = 322.02484
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_qnpof"]
 radius = 58.034473
 
 [node name="Player" type="Node2D" unique_id=1506923292]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=823576075]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=823576075 node_paths=PackedStringArray("PLAYER_COLLSION_NODE")]
 script = ExtResource("1_symyc")
+PLAYER_COLLSION_NODE = NodePath(".")
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D" unique_id=1071848475]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D" unique_id=694385652]
+shape = SubResource("CircleShape2D_2tu2c")
+debug_color = Color(0.5647387, 0.5585411, 0, 0.41960785)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=872002131]
 sprite_frames = ExtResource("2_abrql")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1555644577]
 shape = SubResource("CircleShape2D_qnpof")
+
+[connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_npc_enter_interaction_area"]
+[connection signal="body_exited" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_npc_exit_interaction_area"]
