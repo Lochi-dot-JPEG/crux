@@ -1,10 +1,10 @@
 extends Node2D
 
-var speed = 100
+var velocity = Vector2()
 
-func _process(_delta):
-	position.y += 700 + speed * _delta
-	check_if_despawn(position.y)
+func _ready():
+	print("created")
+	velocity.y = 200
 	
 func check_if_despawn(pos):
 	if pos.y == 2000:

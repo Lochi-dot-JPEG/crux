@@ -1,15 +1,21 @@
-extends Control
+extends Node2D
+
+@onready var timer = $Timer
+var target = preload("res://cannonerminigame/cannon_target.tscn")
 
 
 func _ready():
-	var timer = Timer.new()
-	timer.wait_time = 1
-	timer.autostart = true
-	add_child(timer)
-	timer.timeout.connect(_on_timeout)
+	timer.wait_time = 5
+	timer.start()
+	await timer.timeout
+	
+func spawn_new():
+	var targetNew = target.instantiate()
+	targetNew.position.x = randf_range(0, 700)
+	add_child(targetNew)
 
-func _on_timeout():
-	var target = preload("res://cannonerminigame/cannon_target.tscn").instantiate()
-	target.position.x = 100
-	print("summoned target")
-	target.position.y = 700
+func _process(_delta):
+	timer -= _delta
+	while timer <= 0:
+		spawn_new()
+		timer += timer.wait_time
