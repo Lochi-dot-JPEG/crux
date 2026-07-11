@@ -1,15 +1,15 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://dphktdl2dasn0"]
 
-[ext_resource type="Texture2D" uid="uid://b4lvtaak6tehn" path="res://sprites/chef/c1.png" id="1_5r5f8"]
-[ext_resource type="Texture2D" uid="uid://bvcj5facqnavx" path="res://sprites/chef/c2.png" id="2_ckuaq"]
-[ext_resource type="Texture2D" uid="uid://b3yiyjk3px1nf" path="res://sprites/chef/c3.png" id="3_6tsxt"]
-[ext_resource type="Texture2D" uid="uid://kexrpg7jw4r0" path="res://sprites/chef/c4 (1).png" id="4_b4mg5"]
-[ext_resource type="Texture2D" uid="uid://bgkymk32vh8pt" path="res://sprites/chef/c5.png" id="5_8vo8g"]
+[ext_resource type="Texture2D" uid="uid://dd0pwpdyj32bs" path="res://sprites/chef/Untitled115_20260711175752.png" id="1_5r5f8"]
+[ext_resource type="Texture2D" uid="uid://d1m4cg27a4bx1" path="res://sprites/chef/Untitled115_20260711175819.png" id="2_ckuaq"]
+[ext_resource type="Texture2D" uid="uid://h2mkcd4y5yr8" path="res://sprites/chef/Untitled115_20260711175839.png" id="3_6tsxt"]
+[ext_resource type="Texture2D" uid="uid://0i4ke8b51bbs" path="res://sprites/chef/Untitled115_20260711175910.png" id="4_b4mg5"]
+[ext_resource type="Texture2D" uid="uid://dvexuoj6x3eg6" path="res://sprites/chef/Untitled115_20260711175927.png" id="5_8vo8g"]
 
 [resource]
 animations = [{
 "frames": [{
-"duration": 2.0,
+"duration": 1.0,
 "texture": ExtResource("1_5r5f8")
 }, {
 "duration": 1.0,
@@ -25,6 +25,6 @@ animations = [{
 "texture": ExtResource("5_8vo8g")
 }],
 "loop": 1,
-"name": &"default",
+"name": &"idle",
 "speed": 5.0
 }]
