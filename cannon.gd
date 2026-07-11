@@ -6,6 +6,7 @@ var center = $center.global_position
 var diff_angle: float = global_position.angle_to_point(center)
 
 func _process(_delta):
+	rotation = clampf(rotation, -PI, PI)
 	var rotate = Input.get_axis("left", "right")
 	if Input.is_anything_pressed():
 		change_angle(rotate, _delta)
