@@ -30,10 +30,9 @@ func _show_dialogue_line(line_number : int):
 	var _line : DialogueLine = loaded_lines[line_number]
 	Globals.dialogue_target_camera(_line.character)
 	show()
-	var converted_text = await _substitute_keywords(_line.text)
-	print(converted_text)
 	# TODO load animation here
 	var character_name = await _get_character_name(_line.character)
+	var converted_text = await _substitute_keywords(_line.text)
 	text_label.text = converted_text
 	name_label.text = character_name
 
@@ -80,9 +79,17 @@ func _show_question(question : String):
 func _substitute_keywords(text) -> String:
 	var regexed_keywords = keyword_regex.search_all(text)
 	for result in regexed_keywords:
-		await _ensure_keyword_exists(result.strings[0])
+		if result.strings[0] not in Globals.CHARACTER_TO_DIALOGUE_KEYWORD.keys():
+			await _ensure_keyword_exists(result.strings[0])
 
 	var converted_text = text
+
+	for character_key in Globals.CHARACTER_TO_DIALOGUE_KEYWORD.keys():
+		var character = Globals.CHARACTER_TO_DIALOGUE_KEYWORD[character_key]
+		if Globals.loaded_save.character_names.keys().has(character):
+			print("has character " + str(character))
+			var converted_name = Globals.loaded_save.character_names[character]
+			converted_text = converted_text.replace(character_key, "[color=purple]"+ converted_name + "[/color]")
 
 	for key in Globals.loaded_save.keywords.keys():
 		converted_text = converted_text.replace(key, "[color=red]"+ Globals.loaded_save.keywords[key] + "[/color]")
