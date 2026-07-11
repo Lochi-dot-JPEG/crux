@@ -8,6 +8,8 @@ func _ready():
 	
 func _physics_process(delta: float) -> void:
 	position += velocity * delta
+	check_if_despawn(position)
+	
 func check_if_despawn(pos):
 	if pos.y == 2000:
 		self.queue_free()

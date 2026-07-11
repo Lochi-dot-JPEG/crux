@@ -10,7 +10,7 @@
 [resource]
 animations = [{
 "frames": [{
-"duration": 1.5,
+"duration": 3.0,
 "texture": ExtResource("1_eegle")
 }, {
 "duration": 1.0,
