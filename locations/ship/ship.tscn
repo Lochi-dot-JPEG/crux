@@ -185,6 +185,10 @@ npcEnum = 2
 position = Vector2(-760, 351)
 npcEnum = 4
 
+[node name="Npc5" parent="YSORT" unique_id=648020867 instance=ExtResource("2_5674f")]
+position = Vector2(1039, 109)
+npcEnum = 5
+
 [node name="handle" type="Parallax2D" parent="." unique_id=412141692]
 modulate = Color(0.9979226, 0.8676202, 0.6891002, 1)
 self_modulate = Color(0.5752728, 0.31179473, 0.07935459, 1)

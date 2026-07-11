@@ -17,7 +17,7 @@ func update_marker(marker : Globals.CHARACTER):
 
 func update_sprite():
 	npcAnimatedSprite.sprite_frames = Globals.CHARACTER_TO_SPRITEFRAMES[npcEnum]
-
+	npcAnimatedSprite.play("idle")
 
 func _animate():
 	if Globals.talk_character == npcEnum:
@@ -50,3 +50,5 @@ func on_interact():
 			Globals.dialogue_played.emit("cannon-intro")
 		Globals.CHARACTER.YOU:
 			Globals.dialogue_played.emit("test")
+		Globals.CHARACTER.NAVIGATOR:
+			Globals.dialogue_played.emit("nav-intro")

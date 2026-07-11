@@ -10,7 +10,7 @@ var loaded_save : SaveFile
 var dialogue_player = false
 
 # Configure the template
-const MAIN_SCENE_FILE = "res://ui/main/main.tscn"
+const MAIN_SCENE_FILE = "res://locations/placeholder/placeholder.tscn"
 const GAME_TITLE = "Your Game Title"
 
 signal dialogue_played(file)
@@ -37,6 +37,7 @@ enum CHARACTER {
 	MEDIC,
 	CANNONEER,
 	SOUSCHEF,
+	NAVIGATOR,
 	NONE,
 }
 
@@ -61,6 +62,7 @@ const CHARACTER_TO_SPRITEFRAMES = {
 	CHARACTER.SOUSCHEF:preload("res://sprites/sous.tres"),
 	CHARACTER.CANNONEER:preload("res://sprites/cannon.tres"),
 	CHARACTER.MEDIC:preload("res://sprites/medic.tres"),
+	CHARACTER.NAVIGATOR:preload("res://sprites/nav.tres"),
 }
 
 const CHARACTER_TO_ROLE = {
@@ -69,6 +71,7 @@ const CHARACTER_TO_ROLE = {
 	CHARACTER.SOUSCHEF:"Sous-Chef",
 	CHARACTER.CANNONEER:"Cannoneer",
 	CHARACTER.MEDIC:"Medic",
+	CHARACTER.NAVIGATOR:"Navigator",
 }
 
 const NAMES_TO_CHARACTER = {
@@ -77,6 +80,7 @@ const NAMES_TO_CHARACTER = {
 	"cochef":CHARACTER.SOUSCHEF,
 	"medic":CHARACTER.MEDIC,
 	"cannon":CHARACTER.CANNONEER,
+	"nav":CHARACTER.NAVIGATOR,
 }
 
 const CHARACTER_TO_DIALOGUE_KEYWORD = {
@@ -85,6 +89,7 @@ const CHARACTER_TO_DIALOGUE_KEYWORD = {
 	"[cochef]": CHARACTER.SOUSCHEF,
 	"[cannon]": CHARACTER.CANNONEER,
 	"[medic]": CHARACTER.MEDIC,
+	"[nav]": CHARACTER.NAVIGATOR
 }
 
 const HEAL_SPRITES = [

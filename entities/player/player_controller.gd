@@ -19,6 +19,8 @@ func _ready() -> void:
 	Globals.unfreeze_player.connect(_unfreeze)
 	Globals.finished_dialogue.connect(_finished_dialogue)
 	Globals.mark_character.emit(Globals.CHARACTER.NONE)
+	await get_tree().create_timer(0.2).timeout
+	Globals.dialogue_played.emit("intro")
 
 
 func _freeze() -> void:
