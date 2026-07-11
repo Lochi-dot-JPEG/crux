@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dcv7h26yive6b" path="res://sprites/medic/m3.png" id="2_skxhc"]
 [ext_resource type="Texture2D" uid="uid://nxqvbt6coqgm" path="res://sprites/medic/m2.png" id="3_fclx0"]
 [ext_resource type="Texture2D" uid="uid://bp6untolv5qlr" path="res://sprites/medic/mtalk.png" id="4_xvvdx"]
+[ext_resource type="Texture2D" uid="uid://dvgbv7bjq08id" path="res://sprites/medic/think.png" id="5_fclx0"]
+[ext_resource type="Texture2D" uid="uid://dnuh7lvrwsp5q" path="res://sprites/medic/mttalk.png" id="6_xvvdx"]
 
 [resource]
 animations = [{
@@ -33,5 +35,16 @@ animations = [{
 }],
 "loop": 1,
 "name": &"talk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_fclx0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xvvdx")
+}],
+"loop": 1,
+"name": &"thinktalk",
 "speed": 5.0
 }]
