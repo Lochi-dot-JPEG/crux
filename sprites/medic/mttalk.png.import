@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4lvtaak6tehn"
-path="res://.godot/imported/c1.png-3128473d49b3875a651346ecfd66fec5.ctex"
+uid="uid://dnuh7lvrwsp5q"
+path="res://.godot/imported/mttalk.png-8bfc8f1391d1fe04b574313bb75ac989.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/chef/c1.png"
-dest_files=["res://.godot/imported/c1.png-3128473d49b3875a651346ecfd66fec5.ctex"]
+source_file="res://sprites/medic/mttalk.png"
+dest_files=["res://.godot/imported/mttalk.png-8bfc8f1391d1fe04b574313bb75ac989.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kexrpg7jw4r0"
-path="res://.godot/imported/c4 (1).png-19c8c82726870636830da7f338adfa4e.ctex"
+uid="uid://dvgbv7bjq08id"
+path="res://.godot/imported/think.png-618f4f9e468ab9fdb5b41e511e99be46.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/chef/c4 (1).png"
-dest_files=["res://.godot/imported/c4 (1).png-19c8c82726870636830da7f338adfa4e.ctex"]
+source_file="res://sprites/medic/think.png"
+dest_files=["res://.godot/imported/think.png-618f4f9e468ab9fdb5b41e511e99be46.ctex"]
 
 [params]
 

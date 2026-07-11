@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vse10t5h43fq"
-path="res://.godot/imported/e7.png-e3251679208a00930b13ff8bec088146.ctex"
+uid="uid://dd0pwpdyj32bs"
+path="res://.godot/imported/Untitled115_20260711175752.png-970966f34d3d92dcf1b0d54fc527a056.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/cannon/e7.png"
-dest_files=["res://.godot/imported/e7.png-e3251679208a00930b13ff8bec088146.ctex"]
+source_file="res://sprites/chef/Untitled115_20260711175752.png"
+dest_files=["res://.godot/imported/Untitled115_20260711175752.png-970966f34d3d92dcf1b0d54fc527a056.ctex"]
 
 [params]
 
