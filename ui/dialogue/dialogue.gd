@@ -23,7 +23,7 @@ func _next_line() -> void:
 		loaded_lines = []
 		hide()
 		Globals.dialogue_target_camera(Globals.CHARACTER.YOU)
-		finished_dialogue.emit()
+		Globals.finished_dialogue.emit()
 		return
 	_show_dialogue_line(current_line)
 

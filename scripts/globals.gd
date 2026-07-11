@@ -14,8 +14,11 @@ const MAIN_SCENE_FILE = "res://ui/main/main.tscn"
 const GAME_TITLE = "Your Game Title"
 
 signal dialogue_played(file)
+signal switch_scene(packed_scene : PackedScene)
+signal finished_dialogue
 
 var camera: Camera2D
+
 
 enum CHARACTER {
 	YOU,
