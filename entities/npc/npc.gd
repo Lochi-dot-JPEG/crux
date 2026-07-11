@@ -2,15 +2,22 @@ extends Node2D
 
 @export var npcEnum : Globals.CHARACTER
 @export var npcAnimatedSprite : AnimatedSprite2D
+@onready var talk_marker : Sprite2D = %Talkking
 
 func _ready() -> void:
 	add_to_group("characters")
 	Globals.changed_talker.connect(_animate)
+	Globals.mark_character.connect(update_marker)
 	update_sprite()
+
+
+func update_marker(marker : Globals.CHARACTER):
+	talk_marker.visible = marker == npcEnum
 
 
 func update_sprite():
 	npcAnimatedSprite.sprite_frames = Globals.CHARACTER_TO_SPRITEFRAMES[npcEnum]
+
 
 func _animate():
 	if Globals.talk_character == npcEnum:
@@ -23,6 +30,7 @@ func _animate():
 	var player = get_tree().get_first_node_in_group("player")
 	if player:
 		npcAnimatedSprite.flip_h = player.global_position.x < global_position.x
+
 
 func on_interact():
 	match npcEnum:

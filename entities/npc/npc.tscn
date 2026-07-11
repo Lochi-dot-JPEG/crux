@@ -2,22 +2,31 @@
 
 [ext_resource type="Script" uid="uid://wt627uxvt6bu" path="res://entities/npc/npc.gd" id="1_e3lg2"]
 [ext_resource type="SpriteFrames" uid="uid://homlyqkfjtjl" path="res://sprites/player.tres" id="2_e3lg2"]
+[ext_resource type="Texture2D" uid="uid://k18oweq263d5" path="res://sprites/captain/capnorm.png" id="3_7bf1a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnpof"]
-size = Vector2(135, 139)
+size = Vector2(135, 74.5)
 
 [node name="Npc" type="Node2D" unique_id=1131074689 node_paths=PackedStringArray("npcAnimatedSprite") groups=["characters", "interactables"]]
+y_sort_enabled = true
 script = ExtResource("1_e3lg2")
 npcAnimatedSprite = NodePath("AnimatedSprite2D")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=73165341]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1137536474]
-position = Vector2(1.5, 1.5)
+position = Vector2(1.5, 87.25)
 shape = SubResource("RectangleShape2D_qnpof")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1136983165]
 scale = Vector2(0.075, 0.075)
 sprite_frames = ExtResource("2_e3lg2")
 animation = &"walk"
-frame_progress = 0.20005457
+frame_progress = 0.2905108
+
+[node name="Talkking" type="Sprite2D" parent="." unique_id=1714463751]
+unique_name_in_owner = true
+visible = false
+position = Vector2(0, -191.99998)
+scale = Vector2(0.015, 0.015)
+texture = ExtResource("3_7bf1a")
