@@ -19,6 +19,11 @@ func on_interact():
 			Globals.dialogue_played.emit("souschef-warning")
 		Globals.CHARACTER.CHEF:
 			Globals.dialogue_played.emit("chef-intro")
-			pass
+			await Globals.finished_dialogue
+			var chef_game = get_tree().get_first_node_in_group("chefgame")
+			chef_game.show()
+			chef_game._start()
+			#get_tree().root.get_node("Main")._switch_scene(load("res://locations/chef-game/chef_game.tscn"))
+
 		Globals.CHARACTER.YOU:
 			Globals.dialogue_played.emit("test")

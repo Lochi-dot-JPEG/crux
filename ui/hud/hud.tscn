@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b7rgfhpcmfq04"]
 
 [ext_resource type="PackedScene" uid="uid://bbo4bef8gsmne" path="res://ui/dialogue/dialogue.tscn" id="1_xmswo"]
+[ext_resource type="PackedScene" uid="uid://bdqyfi7cfjg86" path="res://locations/chef-game/chef_game.tscn" id="2_4d6w6"]
 
 [node name="Hud" type="Control" unique_id=1234464146]
 layout_mode = 3
@@ -10,5 +11,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Dialogue" parent="." unique_id=205847605 instance=ExtResource("1_xmswo")]
+[node name="Dialogue" parent="." unique_id=205847605 groups=["dialogue"] instance=ExtResource("1_xmswo")]
+layout_mode = 1
+
+[node name="ChefGame" parent="." unique_id=1928149109 groups=["chefgame"] instance=ExtResource("2_4d6w6")]
+visible = false
 layout_mode = 1

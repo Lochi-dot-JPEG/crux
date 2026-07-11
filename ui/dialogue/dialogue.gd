@@ -47,6 +47,7 @@ func _input(event: InputEvent) -> void:
 
 
 func _ensure_keyword_exists(keyword_id : String):
+
 	if keyword_id not in Globals.loaded_save.keywords.keys():
 		var valid_find = false
 		_show_question("What word captures the crux of " + str(keyword_id)) # TODO dont just use ids
