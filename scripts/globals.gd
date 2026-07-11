@@ -12,3 +12,35 @@ var loaded_save : SaveFile
 const MAIN_SCENE_FILE = "res://ui/main/main.tscn"
 const GAME_TITLE = "Your Game Title"
 
+
+var camera: Camera2D
+
+enum CHARACTER {
+	YOU,
+	CHEF,
+	SOUSCHEF,
+}
+
+const CHARACTER_TO_ROLE = {
+	CHARACTER.YOU:"Captain",
+	CHARACTER.CHEF:"Chef",
+	CHARACTER.SOUSCHEF:"Sous-Chef",
+}
+
+const NAMES_TO_CHARACTER = {
+	"you":CHARACTER.YOU,
+	"chef":CHARACTER.CHEF,
+	"cochef":CHARACTER.SOUSCHEF,
+}
+
+func dialogue_target_camera(target_character : CHARACTER):
+	if target_character == CHARACTER.YOU:
+		camera.reset_target()
+		return
+	
+	var characters = get_tree().get_nodes_in_group("characters")
+	for c in characters :
+		if (c.npcEnum != target_character):
+			continue
+		camera.override_target(c)
+		break

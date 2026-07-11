@@ -83,3 +83,5 @@ scroll_offset = Vector2(96, 157)
 
 [node name="Sprite2D" type="Sprite2D" parent="front" unique_id=1389571868]
 texture = ExtResource("10_8yuv6")
+position = Vector2(275, 90)
+npcEnum = 1

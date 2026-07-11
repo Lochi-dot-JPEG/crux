@@ -12,12 +12,9 @@ radius = 58.034473
 
 [node name="Player" type="Node2D" unique_id=1506923292]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=823576075 node_paths=PackedStringArray("sprite", "PLAYER_COLLSION_NODE")]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=823576075 node_paths=PackedStringArray("PLAYER_COLLSION_NODE")]
 script = ExtResource("1_symyc")
-sprite = NodePath("Sprite")
 PLAYER_COLLSION_NODE = NodePath(".")
-IDLE = "idle"
-WALK = "walk"
 
 [node name="Area2D" type="Area2D" parent="CharacterBody2D" unique_id=1071848475]
 
@@ -28,8 +25,6 @@ debug_color = Color(0.5647387, 0.5585411, 0, 0.41960785)
 [node name="Sprite" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=872002131]
 scale = Vector2(0.035, 0.035)
 sprite_frames = ExtResource("2_abrql")
-animation = &"walk"
-frame_progress = 0.801629
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1555644577]
 shape = SubResource("CircleShape2D_qnpof")
