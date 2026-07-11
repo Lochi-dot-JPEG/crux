@@ -7,6 +7,7 @@ var high_score = 100
 var score = 0
 var loaded_settings : SettingsFile
 var loaded_save : SaveFile
+var dialogue_player = false
 
 # Configure the template
 const MAIN_SCENE_FILE = "res://ui/main/main.tscn"
