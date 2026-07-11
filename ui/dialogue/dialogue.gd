@@ -14,7 +14,8 @@ var loaded_lines : Array[DialogueLine] = []
 var current_line : int = 0
 
 func _ready() -> void:
-	_load_dialogue("test")
+	Globals.dialogue_played.connect(_load_dialogue)
+	
 
 
 func _next_line() -> void:
@@ -22,6 +23,7 @@ func _next_line() -> void:
 	if current_line >= loaded_lines.size():
 		loaded_lines = []
 		hide()
+		Globals.dialogue_target_camera(Globals.CHARACTER.YOU)
 		return
 	_show_dialogue_line(current_line)
 
@@ -96,6 +98,8 @@ func _get_character_name(character : Globals.CHARACTER) -> String:
 
 
 func _load_dialogue(file : String) -> void:
+	if loaded_lines != []:
+		return
 	loaded_lines = DialogueLine._load_dialogue_file(file)
 	current_line = -1
 	_next_line()

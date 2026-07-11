@@ -14,7 +14,7 @@ func update_sprite():
 			pass
 
 func on_interact():
-	Globals.dialogue_target_camera(npcEnum)
+	Globals.dialogue_played.emit("test")
 	match npcEnum:
 		Globals.CHARACTER.CHEF:
 			# TODO use globals to show dialogue

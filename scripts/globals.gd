@@ -12,6 +12,7 @@ var loaded_save : SaveFile
 const MAIN_SCENE_FILE = "res://ui/main/main.tscn"
 const GAME_TITLE = "Your Game Title"
 
+signal dialogue_played(file)
 
 var camera: Camera2D
 

@@ -12,6 +12,8 @@ var interactable_npcs:Array[Node2D] = []
 
 func handle_movement():
 	var direction := Input.get_vector("left", "right", "up", "down")
+	if Globals.camera.override_target != null:
+		pass
 	if direction:
 		sprite.play(WALK)
 		velocity.x = direction.x * SPEED
