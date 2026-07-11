@@ -43,9 +43,7 @@ func _start():
 	_finished()
 
 func _finished():
-	if Globals.loaded_save.won_medic == SaveFile.WIN_STATES.UNDETERMINED:
-		Globals.loaded_save.won_medic = SaveFile.WIN_STATES.LOST
-	elif Globals.loaded_save.won_medic == SaveFile.WIN_STATES.WON:
+	if Globals.loaded_save.won_medic == SaveFile.WIN_STATES.WON:
 		Globals.dialogue_played.emit("win-medic")
 		await Globals.finished_dialogue
 	hide()

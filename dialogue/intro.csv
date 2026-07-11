@@ -4,7 +4,7 @@ you,normal,The [ship name]'s crew consists of a chef‚ his sous-chef‚ the can
 chef,normal,Why are you talking to yourself?
 you,normal,I feel the presence of an audience.
 chef,normal,Do you want me to introduce myself to this audience too?
-chef,think,(This guy is delusional)
+chef,think,([you] is delusional)
 chef,normal,I am [chef]‚ the chef of this ship.
 cochef,think,(are we just going around and introducing ourselves?)
 cochef,normal,and I am [cochef]‚ the sous-chef.
@@ -14,7 +14,7 @@ medic,normal,And I'm [medic]‚ the medic.
 medic,think,(Hopefully I won't be needed today.)
 medic,normal,I patch up injuries‚ treat illnesses‚ and make sure these idiots survive.
 medic,normal,Just try not to give me extra work.
-chef,normal,Captain...
+chef,normal,[you]...
 chef,normal,Isn't there something you're forgetting?
 you,normal,I remember everything that matters.
 cochef,normal,Really?
@@ -42,4 +42,4 @@ chef,think,So...
 chef,normal,Shall we go back?
 you,think,...
 you,normal,Yes‚ but I'll prove to you that there was no way it was my fault.
-you,normal,Helm‚ prepare for a completely intentional change of course!
+you,normal,[cannon]‚ prepare for a completely intentional change of course!

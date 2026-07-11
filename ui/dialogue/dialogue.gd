@@ -22,8 +22,8 @@ func _next_line() -> void:
 		loaded_lines = []
 		hide()
 		Globals.dialogue_target_camera(Globals.CHARACTER.YOU)
-		Globals.finished_dialogue.emit()
 		Globals.unfreeze_player.emit()
+		Globals.finished_dialogue.emit()
 		Globals.talk_character = Globals.CHARACTER.NONE
 		return
 	_show_dialogue_line(current_line)

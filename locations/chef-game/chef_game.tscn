@@ -4,6 +4,7 @@
 [ext_resource type="SpriteFrames" uid="uid://dphktdl2dasn0" path="res://sprites/chef.tres" id="2_p88b8"]
 [ext_resource type="SpriteFrames" uid="uid://homlyqkfjtjl" path="res://sprites/player.tres" id="3_0iro1"]
 [ext_resource type="SpriteFrames" uid="uid://6kvuv52rgtvc" path="res://sprites/sous.tres" id="4_7sioi"]
+[ext_resource type="Texture2D" uid="uid://dmcw64ji8jyqw" path="res://sprites/items/pot.png" id="5_0iro1"]
 
 [node name="ChefGame" type="Control" unique_id=1928149109]
 layout_mode = 3
@@ -54,6 +55,7 @@ text = "Put in some chocolate!"
 position = Vector2(-261, 122)
 scale = Vector2(0.15, 0.15)
 sprite_frames = ExtResource("2_p88b8")
+animation = &"idle"
 autoplay = "default"
 frame_progress = 0.76333845
 
@@ -73,3 +75,8 @@ animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.6037074
 flip_h = true
+
+[node name="Pot" type="Sprite2D" parent="Question" unique_id=1680732794]
+z_index = -1
+position = Vector2(135, -9)
+texture = ExtResource("5_0iro1")

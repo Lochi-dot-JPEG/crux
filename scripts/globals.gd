@@ -41,7 +41,7 @@ enum CHARACTER {
 
 const KEYWORD_QUESTIONS = {
 	"ship name":"What is your ship called?",
-	"you":"You are captain of the ship. What is your name?",
+	"you":"You are captain of the ship. What does your crew call you?",
 	"chef":"What is your head chef's name?",
 	"cochef":"What is the sous-chef's name?",
 	"medic":"What is the name of your medic?",
