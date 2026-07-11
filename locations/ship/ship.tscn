@@ -99,3 +99,20 @@ z_index = 4096
 
 [node name="Sprite2D2" type="Sprite2D" parent="waterfront" unique_id=446086548]
 texture = ExtResource("12_6apa7")
+
+[node name="Collisions" type="Node2D" parent="." unique_id=1648618876]
+scale = Vector2(1.667, 1.667)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Collisions" unique_id=1960283093]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions/StaticBody2D" unique_id=1030027047]
+modulate = Color(1, 1, 1, 0.14901961)
+position = Vector2(103, 17)
+polygon = PackedVector2Array(387, -315, 164, -71, 122, -44, 101, -115, -510, -124, -617, -140, -488, -3, -651, -131, -632, -262, -919, -169, -1009, -72, -1007, 215, -729, 327, -735, 157, -694, 25, -531, 132, -673, 106, -689, 175, -674, 270, -653.44403, 321.9629, -369, 303, -13, 307, 383, 323, 598, 48, 709, 36, 836, -25, 769, -268, 443, -358, 292, -446, 935, -454, 1096, 142, 711, 280, 717, 433, 719, 609, 270, 561, -142, 575, -553, 578, -975, 536, -1237, 423, -1305, 25, -1183, -276, -678, -439, -131, -528, 481, -395)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Collisions" unique_id=2028367548]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions/StaticBody2D2" unique_id=744818714]
+modulate = Color(1, 1, 1, 0.14901961)
+position = Vector2(320, 41)
+polygon = PackedVector2Array(375, -106, 237, -28, 47, 150, 136, 30, 179, -2, 135, -15, 13, -16, 189, -188, 277, -252, 355, -189)
