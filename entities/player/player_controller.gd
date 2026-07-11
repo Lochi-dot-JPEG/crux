@@ -13,12 +13,47 @@ extends CharacterBody2D
 var interactable_npcs:Array[Node2D] = []
 var can_move = true
 
+@onready var timer = Timer.new()
 func _ready() -> void:
-
+	add_child(timer)
+	timer.wait_time = 2
+	timer.one_shot = false
+	timer.timeout.connect(_rescan_finished)
+	timer.start()
 	Globals.freeze_player.connect(_freeze)
 	Globals.unfreeze_player.connect(_unfreeze)
 	Globals.finished_dialogue.connect(_finished_dialogue)
 	Globals.mark_character.emit(Globals.CHARACTER.NONE)
+
+
+func _rescan_finished():
+	print("rescanned finished")
+	var confirmed = 0
+	if Globals.loaded_save.won_chef:
+		confirmed += 1
+	if Globals.loaded_save.won_sous_chef:
+		confirmed += 1
+	if Globals.loaded_save.won_cannoneer:
+		confirmed += 1
+	if Globals.loaded_save.won_medic:
+		confirmed += 1
+	print("confirmed " + str(confirmed))
+	if confirmed == 4:
+		var dialogue = get_tree().get_first_node_in_group("dialogue")
+		if dialogue and dialogue.visible:
+			return
+		if not Globals.won:
+			Globals.dialogue_played.emit("good-ending")
+			Globals.won = true
+			await Globals.finished_dialogue
+			get_tree().quit()
+
+
+
+
+
+
+
 
 
 func _freeze() -> void:

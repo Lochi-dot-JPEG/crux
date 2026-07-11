@@ -1,7 +1,13 @@
-cochef,normal,By pretending someone was watching?
-you,normal,It worked‚ didn't it?
+you,normal,I've convinced you all that losing that treasure was not my fault right?
 cannon,normal,No.
 medic,normal,Not even a little.
 cannon,normal,But it's okay.
-cochef,normal,The [ing1] and [ing2] soup didn't turn out THAT bad.
-chef,normal,The [ing1] and [ing2] soup didn't turn out THAT bad.
+cochef,think,The [ing1] and [ing2] soup didn't turn out THAT bad.
+medic,think,I have to admit my [not so miracle cure] was not the best solution to the crew's issues.
+you,normal,I think we've learned a very important lesson.
+you,think,That the [treasure] is not the most important thing we got from this voyage.
+you,normal,It was the friends we made along the way.
+medic,normal,Nope.
+medic,normal,We did not even GET the [treasure].
+cannon,normal,No way.
+chef,normal,We NEED that [treasure]!

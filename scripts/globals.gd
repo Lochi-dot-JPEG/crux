@@ -9,6 +9,7 @@ var loaded_settings : SettingsFile
 var loaded_save : SaveFile
 var dialogue_player = false
 
+var won = false
 # Configure the template
 const MAIN_SCENE_FILE = "res://ui/main/main.tscn"
 const GAME_TITLE = "Your Game Title"
@@ -25,7 +26,7 @@ var talk_character : CHARACTER = CHARACTER.NONE:
 	set(value):
 		talk_character = value
 		changed_talker.emit()
-var talk_thinking = false # TODO make this trigger
+var talk_thinking = false
 
 var camera: Camera2D
 
