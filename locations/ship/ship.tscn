@@ -1,12 +1,87 @@
 [gd_scene format=3 uid="uid://cv57pjnfect3e"]
 
 [ext_resource type="PackedScene" uid="uid://cc6kldh72h875" path="res://entities/player/player.tscn" id="1_86fik"]
+[ext_resource type="Texture2D" uid="uid://1f4ktd4l5qdd" path="res://sprites/ship/boatbase.png" id="1_yq7c6"]
+[ext_resource type="Texture2D" uid="uid://cev2nb24b2c2a" path="res://sprites/ship/boatright.png" id="2_8yuv6"]
 [ext_resource type="PackedScene" uid="uid://bhobs6j062fxk" path="res://entities/npc/npc.tscn" id="2_5674f"]
+[ext_resource type="Texture2D" uid="uid://dtpdsjrm5tpwd" path="res://sprites/ship/boatleft.png" id="3_ec3lk"]
+[ext_resource type="Texture2D" uid="uid://cfurlkvhepgc0" path="res://sprites/ship/boatrstairs.png" id="4_pnw17"]
+[ext_resource type="Texture2D" uid="uid://cw35tf685nl42" path="res://sprites/ship/boatrhand.png" id="7_6apa7"]
+[ext_resource type="Texture2D" uid="uid://svxyi58bv3iv" path="res://sprites/ship/boatrsail.png" id="8_0ti17"]
+[ext_resource type="Texture2D" uid="uid://buhdj38b7w17s" path="res://sprites/ship/boatsalom.png" id="9_1r7i5"]
+[ext_resource type="Texture2D" uid="uid://cy8txyub2p4md" path="res://sprites/ship/boatfront.png" id="10_8yuv6"]
 
 [node name="Ship" type="Node2D" unique_id=1802894920]
+
+[node name="boatbase" type="Parallax2D" parent="." unique_id=496697037]
+modulate = Color(0.9979226, 0.8676202, 0.6891002, 1)
+self_modulate = Color(0.5752728, 0.31179473, 0.07935459, 1)
+z_index = -4096
+
+[node name="Sprite2D" type="Sprite2D" parent="boatbase" unique_id=1282811136]
+texture = ExtResource("1_yq7c6")
+
+[node name="right" type="Parallax2D" parent="." unique_id=1205837665]
+modulate = Color(0.9979226, 0.8676202, 0.6891002, 1)
+self_modulate = Color(0.5752728, 0.31179473, 0.07935459, 1)
+z_index = -4095
+
+[node name="Sprite2D" type="Sprite2D" parent="right" unique_id=1165661088]
+texture = ExtResource("2_8yuv6")
+
+[node name="left" type="Parallax2D" parent="." unique_id=2039394163]
+modulate = Color(0.9979226, 0.8676202, 0.6891002, 1)
+self_modulate = Color(0.5752728, 0.31179473, 0.07935459, 1)
+z_index = -4094
+
+[node name="Sprite2D" type="Sprite2D" parent="left" unique_id=1724008853]
+texture = ExtResource("3_ec3lk")
+
+[node name="stairs" type="Parallax2D" parent="." unique_id=1854108207]
+modulate = Color(0.9979226, 0.8676202, 0.6891002, 1)
+self_modulate = Color(0.5752728, 0.31179473, 0.07935459, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="stairs" unique_id=638561401]
+texture = ExtResource("4_pnw17")
 
 [node name="Player" parent="." unique_id=1506923292 instance=ExtResource("1_86fik")]
 position = Vector2(1, 2)
 
 [node name="Npc" parent="." unique_id=1131074689 instance=ExtResource("2_5674f")]
+position = Vector2(634, 248)
+npcID = 2
+
+[node name="handle" type="Parallax2D" parent="." unique_id=412141692]
+modulate = Color(0.9979226, 0.8676202, 0.6891002, 1)
+self_modulate = Color(0.5752728, 0.31179473, 0.07935459, 1)
+z_index = 4096
+
+[node name="Sprite2D" type="Sprite2D" parent="handle" unique_id=660896414]
+texture = ExtResource("7_6apa7")
+
+[node name="sailsright" type="Parallax2D" parent="." unique_id=839342309]
+modulate = Color(0.9979226, 0.8676202, 0.6891002, 1)
+self_modulate = Color(0.5752728, 0.31179473, 0.07935459, 1)
+z_index = 4096
+
+[node name="Sprite2D" type="Sprite2D" parent="sailsright" unique_id=732963711]
+texture = ExtResource("8_0ti17")
+
+[node name="sailsleft" type="Parallax2D" parent="." unique_id=434296607]
+modulate = Color(0.9979226, 0.8676202, 0.6891002, 1)
+self_modulate = Color(0.5752728, 0.31179473, 0.07935459, 1)
+z_index = 4094
+
+[node name="Sprite2D" type="Sprite2D" parent="sailsleft" unique_id=792159674]
+texture = ExtResource("9_1r7i5")
+
+[node name="front" type="Parallax2D" parent="." unique_id=112616143]
+modulate = Color(0.9979226, 0.8676202, 0.6891002, 1)
+self_modulate = Color(0.5752728, 0.31179473, 0.07935459, 1)
+z_index = 4096
+scroll_offset = Vector2(96, 157)
+
+[node name="Sprite2D" type="Sprite2D" parent="front" unique_id=1389571868]
+texture = ExtResource("10_8yuv6")
 position = Vector2(275, 90)
+npcEnum = 1

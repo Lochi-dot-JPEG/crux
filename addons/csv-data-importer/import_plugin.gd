@@ -21,7 +21,7 @@ func _get_import_order():
 	return 0
 
 func _get_recognized_extensions():
-	return ["csv", "tsv"]
+	return ["csv", "tsv", "txt"]
 
 
 func _get_save_extension():

@@ -40,11 +40,13 @@ const CHARACTER_TO_DIALOGUE_KEYWORD = {
 }
 
 func dialogue_target_camera(target_character : CHARACTER):
+	if target_character == CHARACTER.YOU:
+		camera.reset_target()
+		return
+	
 	var characters = get_tree().get_nodes_in_group("characters")
 	for c in characters :
 		if (c.npcEnum != target_character):
 			continue
 		camera.override_target(c)
 		break
-	await get_tree().create_timer(1).timeout
-	camera.reset_target()
