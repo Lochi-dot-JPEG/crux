@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cv57pjnfect3e"]
 
 [ext_resource type="PackedScene" uid="uid://cc6kldh72h875" path="res://entities/player/player.tscn" id="1_86fik"]
+[ext_resource type="Texture2D" uid="uid://b83gg7o3frqa7" path="res://sprites/ship/boatfront (1).png" id="1_pnw17"]
 [ext_resource type="Texture2D" uid="uid://1f4ktd4l5qdd" path="res://sprites/ship/boatbase.png" id="1_yq7c6"]
 [ext_resource type="Texture2D" uid="uid://cev2nb24b2c2a" path="res://sprites/ship/boatright.png" id="2_8yuv6"]
 [ext_resource type="PackedScene" uid="uid://bhobs6j062fxk" path="res://entities/npc/npc.tscn" id="2_5674f"]
@@ -10,8 +11,16 @@
 [ext_resource type="Texture2D" uid="uid://svxyi58bv3iv" path="res://sprites/ship/boatrsail.png" id="8_0ti17"]
 [ext_resource type="Texture2D" uid="uid://buhdj38b7w17s" path="res://sprites/ship/boatsalom.png" id="9_1r7i5"]
 [ext_resource type="Texture2D" uid="uid://cy8txyub2p4md" path="res://sprites/ship/boatfront.png" id="10_8yuv6"]
+[ext_resource type="Texture2D" uid="uid://5e4xyia7cw7l" path="res://sprites/ship/Seafront.png" id="12_6apa7"]
 
 [node name="Ship" type="Node2D" unique_id=1802894920]
+
+[node name="waterback" type="Parallax2D" parent="." unique_id=594540091]
+modulate = Color(0.85420114, 0.8583255, 0.99999815, 1)
+z_index = -4096
+
+[node name="Sprite2D2" type="Sprite2D" parent="waterback" unique_id=1893839645]
+texture = ExtResource("1_pnw17")
 
 [node name="boatbase" type="Parallax2D" parent="." unique_id=496697037]
 modulate = Color(0.9979226, 0.8676202, 0.6891002, 1)
@@ -49,7 +58,6 @@ position = Vector2(1, 2)
 
 [node name="Npc" parent="." unique_id=1131074689 instance=ExtResource("2_5674f")]
 position = Vector2(634, 248)
-npcID = 2
 
 [node name="handle" type="Parallax2D" parent="." unique_id=412141692]
 modulate = Color(0.9979226, 0.8676202, 0.6891002, 1)
@@ -82,6 +90,12 @@ z_index = 4096
 scroll_offset = Vector2(96, 157)
 
 [node name="Sprite2D" type="Sprite2D" parent="front" unique_id=1389571868]
-texture = ExtResource("10_8yuv6")
 position = Vector2(275, 90)
-npcEnum = 1
+texture = ExtResource("10_8yuv6")
+
+[node name="waterfront" type="Parallax2D" parent="." unique_id=1089114699]
+modulate = Color(0.85420114, 0.8583255, 0.99999815, 1)
+z_index = 4096
+
+[node name="Sprite2D2" type="Sprite2D" parent="waterfront" unique_id=446086548]
+texture = ExtResource("12_6apa7")
