@@ -1,7 +1,9 @@
 extends Node2D
-@export var speed = 100
+var speed = 200
 
+var returnSpeed = 5
 var center = $center.global_position
+var diff_angle: float = global_position.angle_to_point(center)
 
 func _process(_delta):
 	var rotate = Input.get_axis("left", "right")
@@ -20,3 +22,5 @@ func change_angle(rotate, _delta):
 	
 func reset_angle(_delta):
 	print("resetting . . .")
+	await get_tree().create_timer(2).timeout
+	rotation = lerp_angle(rotation, diff_angle, returnSpeed * _delta)
