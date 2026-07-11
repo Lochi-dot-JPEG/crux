@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://83sp6nfh35fq"]
+
+[ext_resource type="PackedScene" uid="uid://cc6kldh72h875" path="res://entities/player/player.tscn" id="1_pvcui"]
+
+[node name="Cannongame" type="Control" unique_id=2035329488]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1737076605]
+layout_mode = 0
+offset_right = 1156.0
+offset_bottom = 753.0
+
+[node name="Player" parent="." unique_id=1506923292 instance=ExtResource("1_pvcui")]
+position = Vector2(567, 604)
+scale = Vector2(2, 2)
+
+[node name="Collisions" type="Node2D" parent="." unique_id=411605848]
+scale = Vector2(1.667, 1.667)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Collisions" unique_id=1468640710]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions/StaticBody2D" unique_id=1776645516]
+position = Vector2(-5.39892, 27.594479)
+polygon = PackedVector2Array(0.59988, 364.72702, 695.8608, 364.72702, 694.661, 424.71503, 2.3995202, 415.11694, -0.59988, 366.52667, -39.59208, 367.72644, -15.59688, 450.50986, 460.10794, 510.49786, 771.4457, 439.11215, 756.44867, 288.54227, 299.34012, 295.74084, 45.558685, 323.14023, -39.59208, 332.3335, -29.39412, 381.52368)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Collisions" unique_id=1739035416]
