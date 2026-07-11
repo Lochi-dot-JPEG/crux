@@ -20,6 +20,9 @@ func _animate():
 			npcAnimatedSprite.play("talk")
 	else:
 		npcAnimatedSprite.play("idle")
+	var player = get_tree().get_first_node_in_group("player")
+	if player:
+		npcAnimatedSprite.flip_h = player.global_position.x < global_position.x
 
 func on_interact():
 	match npcEnum:

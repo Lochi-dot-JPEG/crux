@@ -9,7 +9,7 @@ var target_override:Node2D
 @export var YMAX:float;
 
 const ZOOMED_IN = Vector2(1.0,1.0)
-const ZOOMED_OUT = Vector2(0.5,0.5)
+const ZOOMED_OUT = Vector2(0.6,0.6)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
