@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://jhppc4do3ijf" path="res://sprites/items/cannonball.png" id="2_cn6nk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n1800"]
-radius = 80.75271
+radius = 72.00694
 
 [node name="cannonball" type="Node2D" unique_id=1294326687]
 script = ExtResource("1_246s8")
@@ -12,12 +12,12 @@ script = ExtResource("1_246s8")
 [node name="Area2D" type="Area2D" parent="." unique_id=2103117092]
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=890331750]
-position = Vector2(8.75, 13.500002)
-scale = Vector2(0.5839844, 0.53515625)
+position = Vector2(-3.125001, 6.7500005)
+scale = Vector2(0.51660156, 0.44335938)
 texture = ExtResource("2_cn6nk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=274682384]
-position = Vector2(1, 1)
+position = Vector2(-1, -1)
 shape = SubResource("CircleShape2D_n1800")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
