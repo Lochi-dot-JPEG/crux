@@ -10,3 +10,14 @@ extends Resource
 
 @export var character_names = {}
 @export var keywords = {}
+
+enum WIN_STATES {
+	UNDETERMINED,
+	WON,
+	LOST,
+}
+
+@export var won_chef : WIN_STATES = WIN_STATES.UNDETERMINED
+@export var won_sous_chef : WIN_STATES = WIN_STATES.UNDETERMINED
+@export var won_cannoneer : WIN_STATES = WIN_STATES.UNDETERMINED
+@export var won_medic : WIN_STATES = WIN_STATES.UNDETERMINED

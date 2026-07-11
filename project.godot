@@ -23,7 +23,6 @@ Save="*uid://fy54kb5jjpn2"
 [display]
 
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 
 [dotnet]
 

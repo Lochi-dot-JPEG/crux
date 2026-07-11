@@ -12,7 +12,14 @@ var interactable_npcs:Array[Node2D] = []
 var can_move = true
 
 func _ready() -> void:
+	Globals.freeze_player.connect(_freeze)
+	Globals.unfreeze_player.connect(_unfreeze)
 	Globals.finished_dialogue.connect(_finished_dialogue)
+
+func _freeze() -> void:
+	can_move = false
+func _unfreeze() -> void:
+	can_move = true
 
 func _finished_dialogue() -> void:
 	can_move = true
@@ -20,7 +27,6 @@ func _finished_dialogue() -> void:
 
 
 func handle_movement():
-	print(can_move)
 	if not can_move:
 		return
 	var direction := Input.get_vector("left", "right", "up", "down")
@@ -46,7 +52,6 @@ func handle_interaction():
 	if not Input.is_action_just_pressed("interact"):
 		return
 	for npc:Node2D in interactable_npcs:
-		can_move = false
 		if (npc.get_parent().is_in_group("interactables")):
 				npc.get_parent().on_interact()
 	interactable_npcs = []

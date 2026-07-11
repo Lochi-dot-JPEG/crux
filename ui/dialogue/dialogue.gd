@@ -47,9 +47,10 @@ func _input(event: InputEvent) -> void:
 
 
 func _ensure_keyword_exists(keyword_id : String):
+
 	if keyword_id not in Globals.loaded_save.keywords.keys():
 		var valid_find = false
-		_show_question("What word captures the crux of " + str(keyword_id)) # TODO dont just use ids
+		_show_question("What word captures the crux of " + str(keyword_id).trim_suffix("]").trim_prefix("[")) # TODO dont just use ids
 		while not valid_find:
 			await confirm_button.pressed
 			if text_edit.text != "":
@@ -76,10 +77,10 @@ func _ensure_name_exists(character : Globals.CHARACTER):
 
 func _show_question(question : String):
 	question_box.show()
-	text_edit.text = ""
 	text_edit.grab_focus()
 	text_edit.placeholder_text = ""
 	question_label.text = question
+	text_edit.text = ""
 
 
 func _substitute_keywords(text) -> String:
