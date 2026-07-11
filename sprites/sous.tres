@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://b7warsx3xmpii" path="res://sprites/sous/S3.png" id="3_01rj3"]
 [ext_resource type="Texture2D" uid="uid://cn2a7bxi3c7hw" path="res://sprites/sous/S4.png" id="4_00ae2"]
 [ext_resource type="Texture2D" uid="uid://cgnsiedpvvq43" path="res://sprites/sous/Stalk.png" id="5_wx3gd"]
+[ext_resource type="Texture2D" uid="uid://b3swh3o821qop" path="res://sprites/sous/sthink.png" id="6_01rj3"]
+[ext_resource type="Texture2D" uid="uid://7brap18fx0n3" path="res://sprites/sous/stalkt.png" id="7_00ae2"]
 
 [resource]
 animations = [{
@@ -52,5 +54,16 @@ animations = [{
 }],
 "loop": 1,
 "name": &"talk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_01rj3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_00ae2")
+}],
+"loop": 1,
+"name": &"thinktalk",
 "speed": 5.0
 }]
