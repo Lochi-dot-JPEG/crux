@@ -15,3 +15,4 @@ you,normal,This is what I say
 ### Character Names
 
 captain (normal, thinking)
+cannoner/gunner (idle: spinning gun)
