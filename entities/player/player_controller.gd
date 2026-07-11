@@ -47,8 +47,8 @@ func handle_interaction():
 		return
 	for npc:Node2D in interactable_npcs:
 		can_move = false
-    if (npc.get_parent().is_in_group("interactables")):
-			npc.get_parent().on_interact()
+		if (npc.get_parent().is_in_group("interactables")):
+				npc.get_parent().on_interact()
 	interactable_npcs = []
 		
 
