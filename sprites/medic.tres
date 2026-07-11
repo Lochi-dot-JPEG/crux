@@ -1,0 +1,37 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://77s3nvp8gvtr"]
+
+[ext_resource type="Texture2D" uid="uid://cftwvpds0joi8" path="res://sprites/medic/m1.png" id="1_eegle"]
+[ext_resource type="Texture2D" uid="uid://dcv7h26yive6b" path="res://sprites/medic/m3.png" id="2_skxhc"]
+[ext_resource type="Texture2D" uid="uid://nxqvbt6coqgm" path="res://sprites/medic/m2.png" id="3_fclx0"]
+[ext_resource type="Texture2D" uid="uid://bp6untolv5qlr" path="res://sprites/medic/mtalk.png" id="4_xvvdx"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.5,
+"texture": ExtResource("1_eegle")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_skxhc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fclx0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_skxhc")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_eegle")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xvvdx")
+}],
+"loop": 1,
+"name": &"talk",
+"speed": 5.0
+}]
