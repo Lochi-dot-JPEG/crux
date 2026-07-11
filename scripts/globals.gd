@@ -16,6 +16,8 @@ const GAME_TITLE = "Your Game Title"
 signal dialogue_played(file)
 signal switch_scene(packed_scene : PackedScene)
 signal finished_dialogue
+signal unfreeze_player
+signal freeze_player
 
 var camera: Camera2D
 
@@ -23,6 +25,8 @@ var camera: Camera2D
 enum CHARACTER {
 	YOU,
 	CHEF,
+	MEDIC,
+	CANNONEER,
 	SOUSCHEF,
 }
 
@@ -30,18 +34,24 @@ const CHARACTER_TO_ROLE = {
 	CHARACTER.YOU:"Captain",
 	CHARACTER.CHEF:"Chef",
 	CHARACTER.SOUSCHEF:"Sous-Chef",
+	CHARACTER.CANNONEER:"Cannoneer",
+	CHARACTER.MEDIC:"Medic",
 }
 
 const NAMES_TO_CHARACTER = {
 	"you":CHARACTER.YOU,
 	"chef":CHARACTER.CHEF,
 	"cochef":CHARACTER.SOUSCHEF,
+	"medic":CHARACTER.MEDIC,
+	"cannon":CHARACTER.CANNONEER,
 }
 
 const CHARACTER_TO_DIALOGUE_KEYWORD = {
 	"[you]": CHARACTER.YOU,
 	"[chef]": CHARACTER.CHEF,
 	"[cochef]": CHARACTER.SOUSCHEF,
+	"[cannon]": CHARACTER.CANNONEER,
+	"[medic]": CHARACTER.MEDIC,
 }
 
 func dialogue_target_camera(target_character : CHARACTER):

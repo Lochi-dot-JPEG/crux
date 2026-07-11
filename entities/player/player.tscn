@@ -37,6 +37,7 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_bls4j")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=108528432 node_paths=PackedStringArray("target")]
+offset = Vector2(0, 40)
 zoom = Vector2(0.5, 0.5)
 script = ExtResource("3_sglur")
 target = NodePath("../CharacterBody2D")

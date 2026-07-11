@@ -16,15 +16,17 @@ func _ready() -> void:
 
 func override_target(target:Node2D):
 	target_override = target
+	zoom = Vector2(1,1)
 
 func reset_target():
 	target_override = null
+	zoom = Vector2(0.5,0.5)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	transform = lerp(transform, 
-	target.transform if target_override == null 
-	else target_override.transform, SMOOTHING)
+	global_transform = lerp(global_transform, 
+	target.global_transform if target_override == null 
+	else target_override.global_transform, SMOOTHING)
 	if (position.x > XMAX):
 		position.x = XMAX
 	if (position.x < XMIN):
