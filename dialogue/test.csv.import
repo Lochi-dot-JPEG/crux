@@ -1,19 +1,19 @@
 [remap]
 
-importer="com.timothyqiu.godot-csv-importer"
-type="Resource"
+importer="csv_translation"
+type="Translation"
 uid="uid://dgh2cmc7aqaat"
-path="res://.godot/imported/test.csv-f9386650989382df39f6fdffd3d6ad42.res"
 
 [deps]
 
+files=["res://dialogue/test.normal.translation", "res://dialogue/test.hello chef. i am [you]. Captain of this ship!!!!.translation"]
+
 source_file="res://dialogue/test.csv"
-dest_files=["res://.godot/imported/test.csv-f9386650989382df39f6fdffd3d6ad42.res"]
+dest_files=["res://dialogue/test.normal.translation", "res://dialogue/test.hello chef. i am [you]. Captain of this ship!!!!.translation"]
 
 [params]
 
+compress=1
 delimiter=0
-headers=false
-detect_numbers=false
-force_float=true
-detect_booleans=false
+unescape_keys=false
+unescape_translations=true

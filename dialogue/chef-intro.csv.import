@@ -1,19 +1,19 @@
 [remap]
 
-importer="com.timothyqiu.godot-csv-importer"
-type="Resource"
+importer="csv_translation"
+type="Translation"
 uid="uid://d08x75b1prf4g"
-path="res://.godot/imported/chef-intro.csv-148bf0693f507d87e0893a02cd5eca92.res"
 
 [deps]
 
+files=["res://dialogue/chef-intro.normal.translation", "res://dialogue/chef-intro.I'm so hungry!! I could really go for some [best soup type] soup.translation"]
+
 source_file="res://dialogue/chef-intro.csv"
-dest_files=["res://.godot/imported/chef-intro.csv-148bf0693f507d87e0893a02cd5eca92.res"]
+dest_files=["res://dialogue/chef-intro.normal.translation", "res://dialogue/chef-intro.I'm so hungry!! I could really go for some [best soup type] soup.translation"]
 
 [params]
 
+compress=1
 delimiter=0
-headers=false
-detect_numbers=false
-force_float=true
-detect_booleans=false
+unescape_keys=false
+unescape_translations=true

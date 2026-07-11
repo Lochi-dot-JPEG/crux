@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://fjfp83nbnhep" path="res://sprites/captain/Untitled115_20260710220536.png" id="3_re4hw"]
 [ext_resource type="Texture2D" uid="uid://cvagg625gg4pm" path="res://sprites/captain/Untitled115_20260710220443.png" id="4_ar2kt"]
 [ext_resource type="Texture2D" uid="uid://ci1xdimkw8iiv" path="res://sprites/captain/Untitled115_20260711135830.png" id="5_qgwyp"]
+[ext_resource type="Texture2D" uid="uid://k18oweq263d5" path="res://sprites/captain/capnorm.png" id="5_re4hw"]
+[ext_resource type="Texture2D" uid="uid://bn4ybliiek1o8" path="res://sprites/captain/capnormtalk.png" id="6_ar2kt"]
 [ext_resource type="Texture2D" uid="uid://bxr4vncf50myw" path="res://sprites/captain/Untitled115_20260711082650.png" id="6_y87gd"]
 [ext_resource type="Texture2D" uid="uid://dsm4s3hj2extu" path="res://sprites/captain/Untitled115_20260711082911.png" id="7_m53nl"]
 [ext_resource type="Texture2D" uid="uid://cw7sff5cpnwya" path="res://sprites/captain/Untitled115_20260711082810.png" id="8_sokj7"]
@@ -34,13 +36,24 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("5_re4hw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ar2kt")
+}],
+"loop": 1,
+"name": &"normaltalk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("4_ar2kt")
 }, {
 "duration": 1.0,
 "texture": ExtResource("5_qgwyp")
 }],
 "loop": 1,
-"name": &"talk",
+"name": &"thinktalk",
 "speed": 5.0
 }, {
 "frames": [{
@@ -52,10 +65,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("8_sokj7")
-"texture": ExtResource("7_tsxj6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_hwhu7")
 }, {
 "duration": 1.0,
 "texture": ExtResource("9_wre7l")
