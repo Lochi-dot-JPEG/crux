@@ -1,19 +1,19 @@
 [remap]
 
-importer="csv_translation"
-type="Translation"
+importer="com.timothyqiu.godot-csv-importer"
+type="Resource"
 uid="uid://4qby6ld65k2y"
+path="res://.godot/imported/souschef-warning.csv-2f5ab78494ea9c9546dc5f6c1d1ed306.res"
 
 [deps]
 
-files=["res://dialogue/souschef-warning.normal.translation", "res://dialogue/souschef-warning.I'm complain (TODO).translation"]
-
 source_file="res://dialogue/souschef-warning.csv"
-dest_files=["res://dialogue/souschef-warning.normal.translation", "res://dialogue/souschef-warning.I'm complain (TODO).translation"]
+dest_files=["res://.godot/imported/souschef-warning.csv-2f5ab78494ea9c9546dc5f6c1d1ed306.res"]
 
 [params]
 
-compress=1
 delimiter=0
-unescape_keys=false
-unescape_translations=true
+headers=false
+detect_numbers=false
+force_float=true
+detect_booleans=false
