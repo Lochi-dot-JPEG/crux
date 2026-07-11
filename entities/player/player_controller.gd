@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var sprite : AnimatedSprite2D
 @export var SPEED = 300.0
-@export var PLAYER_COLLSION_NODE : Node2D
+@export var COLLSION_NODES : Array[Node2D]
 
 @export_category("Animations")
 @export var IDLE:String
@@ -34,10 +34,11 @@ func handle_interaction():
 	if not Input.is_action_just_pressed("interact"):
 		return
 	for npc:Node2D in interactable_npcs:
-		npc.get_parent().on_interact()
+		if (npc.get_parent().is_in_group("interactables")):
+			npc.get_parent().on_interact()
 
 func _npc_enter_interaction_area(npc:Node2D):
-	if (npc == PLAYER_COLLSION_NODE):
+	if (npc in COLLSION_NODES):
 		return
 	interactable_npcs.append(npc)
 
