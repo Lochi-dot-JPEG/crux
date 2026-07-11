@@ -15,4 +15,5 @@ grow_vertical = 2
 layout_mode = 1
 
 [node name="ChefGame" parent="." unique_id=1928149109 groups=["chefgame"] instance=ExtResource("2_4d6w6")]
+visible = false
 layout_mode = 1
