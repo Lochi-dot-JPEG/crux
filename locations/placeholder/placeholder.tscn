@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://bh3nol7uig0r3"]
 
 [ext_resource type="PackedScene" uid="uid://cv57pjnfect3e" path="res://locations/ship/ship.tscn" id="1_1y7xk"]
+[ext_resource type="Script" uid="uid://d4l7wdeg0181v" path="res://ui/main/main.gd" id="1_lyryq"]
+[ext_resource type="PackedScene" uid="uid://b7rgfhpcmfq04" path="res://ui/hud/hud.tscn" id="2_ohf3v"]
 
 [node name="Placeholder" type="Node2D" unique_id=834627956]
+script = ExtResource("1_lyryq")
 
 [node name="Ship" parent="." unique_id=1802894920 instance=ExtResource("1_1y7xk")]
 
-[node name="Label" type="Label" parent="." unique_id=1722678189]
-visible = false
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Put your game in this scene"
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=726163541]
+
+[node name="Hud" parent="CanvasLayer" unique_id=1234464146 instance=ExtResource("2_ohf3v")]
