@@ -14,7 +14,6 @@ var current_line : int = 0
 
 func _ready() -> void:
 	Globals.dialogue_played.connect(_load_dialogue)
-	
 
 
 func _next_line() -> void:
@@ -24,6 +23,7 @@ func _next_line() -> void:
 		hide()
 		Globals.dialogue_target_camera(Globals.CHARACTER.YOU)
 		Globals.finished_dialogue.emit()
+		Globals.unfreeze_player.emit()
 		Globals.talk_character = Globals.CHARACTER.NONE
 		return
 	_show_dialogue_line(current_line)
@@ -32,14 +32,14 @@ func _next_line() -> void:
 func _show_dialogue_line(line_number : int):
 	var _line : DialogueLine = loaded_lines[line_number]
 	Globals.dialogue_target_camera(_line.character)
+	Globals.freeze_player.emit()
 	show()
-	# TODO load animation here
 	var character_name = await _get_character_name(_line.character)
 	var converted_text = await _substitute_keywords(_line.text)
+	Globals.talk_thinking = _line.animation == "think"
 	Globals.talk_character = _line.character
 	text_label.text = converted_text
 	name_label.text = character_name
-
 
 func _input(event: InputEvent) -> void:
 	if not visible:
@@ -83,6 +83,9 @@ func _show_question(question : String):
 	text_edit.placeholder_text = ""
 	question_label.text = question
 	text_edit.text = ""
+	text_edit.editable = false
+	await get_tree().create_timer(0.05).timeout
+	text_edit.editable = true
 
 
 func _substitute_keywords(text) -> String:

@@ -65,7 +65,7 @@ animations = [{
 "texture": ExtResource("8_ibfy5")
 }],
 "loop": 1,
-"name": &"normaltalk",
+"name": &"talk",
 "speed": 5.0
 }, {
 "frames": [{

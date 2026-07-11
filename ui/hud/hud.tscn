@@ -12,12 +12,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="MedicGame" parent="." unique_id=1205038799 groups=["medicgame"] instance=ExtResource("3_e0nub")]
+visible = false
+
 [node name="Dialogue" parent="." unique_id=205847605 groups=["dialogue"] instance=ExtResource("1_xmswo")]
 layout_mode = 1
 
 [node name="ChefGame" parent="." unique_id=1928149109 groups=["chefgame"] instance=ExtResource("2_4d6w6")]
 visible = false
 layout_mode = 1
-
-[node name="MedicGame" parent="." unique_id=1205038799 groups=["medicgame"] instance=ExtResource("3_e0nub")]
-visible = false

@@ -8,14 +8,17 @@ extends CharacterBody2D
 @export var IDLE:String
 @export var WALK:String
 @export var TALK:String
+@onready var area :Area2D= %Area2D
 
 var interactable_npcs:Array[Node2D] = []
 var can_move = true
 
 func _ready() -> void:
+
 	Globals.freeze_player.connect(_freeze)
 	Globals.unfreeze_player.connect(_unfreeze)
 	Globals.finished_dialogue.connect(_finished_dialogue)
+	Globals.mark_character.emit(Globals.CHARACTER.NONE)
 
 
 func _freeze() -> void:
@@ -28,7 +31,6 @@ func _unfreeze() -> void:
 
 func _finished_dialogue() -> void:
 	can_move = true
-	print("finsiehd dialogues")
 
 
 func handle_movement():
@@ -68,10 +70,28 @@ func handle_interaction():
 func _npc_enter_interaction_area(npc:Node2D):
 	if (npc in COLLSION_NODES):
 		return
+	if (npc == self):
+		return
 	interactable_npcs.append(npc)
+	_update_marks()
 
 func _npc_exit_interaction_area(npc:Node2D):
 	interactable_npcs.erase(npc)
+	_update_marks()
+
+func _update_marks():
+	print("updates marks")
+	if interactable_npcs.is_empty():
+		Globals.mark_character.emit(Globals.CHARACTER.NONE)
+		print("none")
+		print(interactable_npcs)
+	else:
+		var npc = interactable_npcs[0].get_node("..")
+		if (npc.is_in_group("characters")):
+			Globals.mark_character.emit(npc.npcEnum)
+			print("emits mark characters")
+		print(interactable_npcs)
+
 
 func _physics_process(_delta: float) -> void:
 	handle_movement()

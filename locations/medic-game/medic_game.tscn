@@ -73,13 +73,13 @@ offset_bottom = 23.0
 grow_horizontal = 2
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=708324914]
-offset_right = 407.0
+offset_right = 307.0
 offset_bottom = 669.0
 color = Color(0, 0, 0, 0.5176471)
 
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=2037410092]
-offset_left = 747.0
-offset_right = 1154.0
+offset_left = 847.045
+offset_right = 1254.045
 offset_bottom = 669.0
 color = Color(0, 0, 0, 0.5176471)
 

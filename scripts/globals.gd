@@ -18,8 +18,14 @@ signal switch_scene(packed_scene : PackedScene)
 signal finished_dialogue
 signal unfreeze_player
 signal freeze_player
+signal changed_talker
+signal mark_character(character : CHARACTER)
 
-var talk_character : CHARACTER = CHARACTER.NONE
+var talk_character : CHARACTER = CHARACTER.NONE:
+	set(value):
+		talk_character = value
+		changed_talker.emit()
+var talk_thinking = false # TODO make this trigger
 
 var camera: Camera2D
 
@@ -31,6 +37,13 @@ enum CHARACTER {
 	CANNONEER,
 	SOUSCHEF,
 	NONE,
+}
+
+const CHARACTER_TO_SPRITEFRAMES = {
+	CHARACTER.CHEF:preload("res://sprites/chef.tres"),
+	CHARACTER.SOUSCHEF:preload("res://sprites/sous.tres"),
+	CHARACTER.CANNONEER:preload("res://sprites/cannon.tres"),
+	CHARACTER.MEDIC:preload("res://sprites/medic.tres"),
 }
 
 const CHARACTER_TO_ROLE = {
@@ -56,6 +69,12 @@ const CHARACTER_TO_DIALOGUE_KEYWORD = {
 	"[cannon]": CHARACTER.CANNONEER,
 	"[medic]": CHARACTER.MEDIC,
 }
+
+const HEAL_SPRITES = [
+	preload("res://sprites/items/bandaid.png"),
+	preload("res://sprites/items/shot.png"),
+	preload("res://sprites/items/ice.png"),
+]
 
 func dialogue_target_camera(target_character : CHARACTER):
 	if target_character == CHARACTER.YOU:

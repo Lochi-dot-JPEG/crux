@@ -1,17 +1,18 @@
 [gd_scene format=3 uid="uid://ds288il2i00gq"]
 
-[ext_resource type="Texture2D" uid="uid://chlxvwmtf2gic" path="res://icon.svg" id="1_4h7tx"]
 [ext_resource type="Script" uid="uid://moti6wf5u6v0" path="res://entities/ice/ice.gd" id="1_jdy4b"]
+[ext_resource type="Texture2D" uid="uid://do08hsjawnsal" path="res://sprites/items/bandaid.png" id="2_jdy4b"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ads0q"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_tm73s"]
+radius = 27.0
 
 [node name="Heals" type="Area2D" unique_id=8194623 groups=["heals"]]
 script = ExtResource("1_jdy4b")
+is_heal = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=738977616]
-shape = SubResource("RectangleShape2D_ads0q")
+shape = SubResource("CircleShape2D_tm73s")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1232746048]
-modulate = Color(1, 0.26, 0.27233315, 1)
-scale = Vector2(0.155, 0.155)
-texture = ExtResource("1_4h7tx")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_jdy4b")

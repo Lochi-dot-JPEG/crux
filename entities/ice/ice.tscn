@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://hc3douj1mssn"]
 
-[ext_resource type="Texture2D" uid="uid://chlxvwmtf2gic" path="res://icon.svg" id="1_q7fak"]
 [ext_resource type="Script" uid="uid://moti6wf5u6v0" path="res://entities/ice/ice.gd" id="1_tm73s"]
+[ext_resource type="Texture2D" uid="uid://dsb74tqjfllo0" path="res://sprites/items/evilmedkit.png" id="2_tm73s"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ads0q"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ircy7"]
+radius = 23.0
 
 [node name="Ice" type="Area2D" unique_id=8194623 groups=["hurts"]]
 script = ExtResource("1_tm73s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=738977616]
-shape = SubResource("RectangleShape2D_ads0q")
+shape = SubResource("CircleShape2D_ircy7")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1232746048]
-modulate = Color(0.26, 0.8396666, 1, 1)
-scale = Vector2(0.155, 0.155)
-texture = ExtResource("1_q7fak")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_tm73s")
