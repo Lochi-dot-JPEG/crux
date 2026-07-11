@@ -52,6 +52,7 @@ const KEYWORD_QUESTIONS = {
 	"ing1":"",
 	"ing2":"",
 	"not so miracle cure":"What does this shabby medic put on everything that never works?",
+	"treasure":"What did you leave behind?",
 }
 
 const CHARACTER_TO_SPRITEFRAMES = {

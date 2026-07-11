@@ -62,7 +62,6 @@ func _ensure_keyword_exists(keyword_id : String):
 			await confirm_button.pressed
 			if text_edit.text != "":
 				valid_find = true
-			# TODO confirm if they really want this word
 		Globals.loaded_save.keywords[keyword_id] = text_edit.text
 		question_box.hide()
 
@@ -77,7 +76,6 @@ func _ensure_name_exists(character : Globals.CHARACTER):
 			await confirm_button.pressed
 			if text_edit.text != "":
 				valid_find = true
-			# TODO confirm if they really want this name
 		Globals.loaded_save.character_names[character] = text_edit.text
 		question_box.hide()
 

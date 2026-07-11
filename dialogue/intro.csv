@@ -1,22 +1,18 @@
-you,normal,I am the lone captain of this humble ship.
+you,normal,I am [you]‚ the lone captain of this humble pirate ship.
 you,normal,It is called the [ship name].
-you,normal,My crew consists of a chef‚ his sous-chef‚ the cannoneer and the medic.
+you,normal,The [ship name]'s crew consists of a chef‚ his sous-chef‚ the cannoneer and the medic.
 chef,normal,Why are you talking to yourself?
 you,normal,I feel the presence of an audience.
-chef,normal,Do you want me to introduce myself?
+chef,normal,Do you want me to introduce myself to this audience too?
 chef,think,(This guy is delusional)
-chef,think,I am [chef]‚ the chef of this ship.
+chef,normal,I am [chef]‚ the chef of this ship.
+cochef,think,(are we just going around and introducing ourselves?)
 cochef,normal,and I am [cochef]‚ the sous-chef.
-cannon,normal,Since everyone's introducing themselves...
-cannon,think,(I guess it's my turn.)
 cannon,normal,I am [cannoneer]‚ the cannoneer of this ship.
-cannon,normal,I keep our cannons clean‚ loaded‚ and ready for trouble.
+cannon,normal,I keep our cannons loaded to take down whoever wants to take our treasure.
 medic,normal,And I'm [medic]‚ the medic.
 medic,think,(Hopefully I won't be needed today.)
 medic,normal,I patch up injuries‚ treat illnesses‚ and make sure these idiots survive.
-cochef,normal,Especially after the head chef's "brilliant" ideas.
-chef,normal,You merely misunderstand my recipes!
-cannon,normal,If [chef] says so.
 medic,normal,Just try not to give me extra work.
 chef,normal,Captain...
 chef,normal,Isn't there something you're forgetting?
@@ -24,14 +20,15 @@ you,normal,I remember everything that matters.
 cochef,normal,Really?
 cochef,normal,Then where's the treasure?
 you,normal,...
-cannon,normal,The treasure we spent three days hauling out of that ruin.
+cannon,normal,The treasure we spent three days hauling out off that island.
 medic,normal,The treasure we stacked neatly on the dock.
 chef,normal,The treasure you told us‚ "Don't let me forget."
 you,normal,Ah.
-you,normal,That treasure.
+you,normal,That treasure. It was that...
+you,normal,[treasure]
 chef,normal,Yes. That treasure.
 cannon,normal,You left it at the port.
-medic,normal,We are currently sailing away from it.
+medic,normal,and we are currently sailing away from it.
 you,normal,I prefer to think of it as strategically stored.
 chef,think,(He's making this up as he goes.)
 cochef,normal,Captain‚ we've been at sea for hours.
@@ -41,10 +38,8 @@ chef,normal,You were distracting us.
 you,normal,I assure you it was NOT me.
 you,think,(I must preserve my reputation)
 you,normal,Someone else must have done it.
-chef,normal,So...
+chef,think,So...
 chef,normal,Shall we go back?
-you,normal,...
-you,normal,Yes.
-you,normal,Helm‚ prepare for a completely intentional change of course.
-cannon,think,(At least he's admitting it.)
-
+you,think,...
+you,normal,Yes‚ but I'll prove to you that there was no way it was my fault.
+you,normal,Helm‚ prepare for a completely intentional change of course!

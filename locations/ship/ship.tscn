@@ -13,11 +13,96 @@
 [ext_resource type="Texture2D" uid="uid://cy8txyub2p4md" path="res://sprites/ship/boatfront.png" id="10_8yuv6"]
 [ext_resource type="Texture2D" uid="uid://5e4xyia7cw7l" path="res://sprites/ship/Seafront.png" id="12_6apa7"]
 
+[sub_resource type="Animation" id="Animation_pnw17"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("waterback3:scroll_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-3, -668)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("waterback4:scroll_offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(114, -1478)]
+}
+
+[sub_resource type="Animation" id="Animation_6apa7"]
+resource_name = "watersway"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("waterback3:scroll_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.9666667, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-3, -668), Vector2(-3, -715.437), Vector2(-3, -668)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("waterback4:scroll_offset")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.93333334, 1.9, 2.8666666, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(114, -1288.552), Vector2(114, -1248), Vector2(114, -1288.552), Vector2(114, -1328), Vector2(114, -1288.552)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0ti17"]
+_data = {
+&"RESET": SubResource("Animation_pnw17"),
+&"watersway": SubResource("Animation_6apa7")
+}
+
 [node name="Ship" type="Node2D" unique_id=1802894920]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=657652156]
+libraries/ = SubResource("AnimationLibrary_0ti17")
+autoplay = &"watersway"
+
+[node name="waterback4" type="Parallax2D" parent="." unique_id=858325572]
+modulate = Color(0.85420114, 0.8583255, 0.99999815, 1)
+z_index = -4096
+scroll_scale = Vector2(0.937, 0.937)
+scroll_offset = Vector2(114, -1478)
+
+[node name="Sprite2D2" type="Sprite2D" parent="waterback4" unique_id=1353180205]
+texture = ExtResource("1_pnw17")
+
+[node name="waterback3" type="Parallax2D" parent="." unique_id=1116279159]
+modulate = Color(0.85420114, 0.8583255, 0.99999815, 1)
+z_index = -4096
+scroll_scale = Vector2(0.98, 0.98)
+scroll_offset = Vector2(-3, -668)
+
+[node name="Sprite2D2" type="Sprite2D" parent="waterback3" unique_id=550442387]
+texture = ExtResource("1_pnw17")
 
 [node name="waterback" type="Parallax2D" parent="." unique_id=594540091]
 modulate = Color(0.85420114, 0.8583255, 0.99999815, 1)
 z_index = -4096
+scroll_offset = Vector2(-3, 10)
 
 [node name="Sprite2D2" type="Sprite2D" parent="waterback" unique_id=1893839645]
 texture = ExtResource("1_pnw17")
@@ -25,7 +110,7 @@ texture = ExtResource("1_pnw17")
 [node name="boatbase" type="Parallax2D" parent="." unique_id=496697037]
 modulate = Color(0.9979226, 0.8676202, 0.6891002, 1)
 self_modulate = Color(0.5752728, 0.31179473, 0.07935459, 1)
-z_index = -4096
+z_index = -1000
 
 [node name="Sprite2D" type="Sprite2D" parent="boatbase" unique_id=1282811136]
 texture = ExtResource("1_yq7c6")
@@ -33,7 +118,7 @@ texture = ExtResource("1_yq7c6")
 [node name="right" type="Parallax2D" parent="." unique_id=1205837665]
 modulate = Color(0.9979226, 0.8676202, 0.6891002, 1)
 self_modulate = Color(0.5752728, 0.31179473, 0.07935459, 1)
-z_index = -4095
+z_index = -40
 
 [node name="Sprite2D" type="Sprite2D" parent="right" unique_id=1165661088]
 texture = ExtResource("2_8yuv6")
@@ -41,7 +126,7 @@ texture = ExtResource("2_8yuv6")
 [node name="left" type="Parallax2D" parent="." unique_id=2039394163]
 modulate = Color(0.9979226, 0.8676202, 0.6891002, 1)
 self_modulate = Color(0.5752728, 0.31179473, 0.07935459, 1)
-z_index = -4094
+z_index = -40
 
 [node name="Sprite2D" type="Sprite2D" parent="left" unique_id=1724008853]
 texture = ExtResource("3_ec3lk")
@@ -113,6 +198,7 @@ texture = ExtResource("10_8yuv6")
 [node name="waterfront" type="Parallax2D" parent="." unique_id=1089114699]
 modulate = Color(0.85420114, 0.8583255, 0.99999815, 1)
 z_index = 4096
+scroll_scale = Vector2(1.289, 1.289)
 
 [node name="Sprite2D2" type="Sprite2D" parent="waterfront" unique_id=446086548]
 texture = ExtResource("12_6apa7")
