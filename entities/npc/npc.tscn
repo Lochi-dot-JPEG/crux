@@ -26,7 +26,7 @@ frame_progress = 0.2905108
 
 [node name="Talkking" type="Sprite2D" parent="." unique_id=1714463751]
 unique_name_in_owner = true
-visible = false
+z_index = 897
 position = Vector2(0, -191.99998)
 scale = Vector2(0.015, 0.015)
 texture = ExtResource("3_7bf1a")

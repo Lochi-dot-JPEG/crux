@@ -5,7 +5,7 @@ chef,normal,What could you mean? I make the [positive descriptor]est [best soup 
 cochef,think,Captain! Can you please help me out here. 
 cochef,normal,You don't want to be eating the captain's [best soup type] soup do you?
 cochef,normal,Try taking my advice!
-chef,normal,Don't take the little guy's advice!
+chef,normal,Don't take [cochef]'s advice!
 chef,normal,I know best!
 chef,normal,and if you don't follow what I. [chef] head chef of the ship says.
 chef,normal,You'll never eat my food again!

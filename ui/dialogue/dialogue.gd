@@ -22,8 +22,8 @@ func _next_line() -> void:
 		loaded_lines = []
 		hide()
 		Globals.dialogue_target_camera(Globals.CHARACTER.YOU)
-		Globals.finished_dialogue.emit()
 		Globals.unfreeze_player.emit()
+		Globals.finished_dialogue.emit()
 		Globals.talk_character = Globals.CHARACTER.NONE
 		return
 	_show_dialogue_line(current_line)
@@ -52,12 +52,16 @@ func _ensure_keyword_exists(keyword_id : String):
 
 	if keyword_id not in Globals.loaded_save.keywords.keys():
 		var valid_find = false
-		_show_question("What word captures the crux of " + str(keyword_id).trim_suffix("]").trim_prefix("[")) # TODO dont just use ids
+
+		var trimmed = str(keyword_id).trim_suffix("]").trim_prefix("[")
+		if trimmed in Globals.KEYWORD_QUESTIONS.keys():
+			_show_question(Globals.KEYWORD_QUESTIONS[trimmed])
+		else:
+			_show_question("What word captures the crux of " + trimmed)
 		while not valid_find:
 			await confirm_button.pressed
 			if text_edit.text != "":
 				valid_find = true
-			# TODO confirm if they really want this word
 		Globals.loaded_save.keywords[keyword_id] = text_edit.text
 		question_box.hide()
 
@@ -72,7 +76,6 @@ func _ensure_name_exists(character : Globals.CHARACTER):
 			await confirm_button.pressed
 			if text_edit.text != "":
 				valid_find = true
-			# TODO confirm if they really want this name
 		Globals.loaded_save.character_names[character] = text_edit.text
 		question_box.hide()
 

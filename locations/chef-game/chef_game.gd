@@ -17,6 +17,7 @@ func _start():
 	question.hide()
 	Globals.dialogue_played.emit("chef-part1")
 	await Globals.finished_dialogue
+	Globals.freeze_player.emit()
 	await _ask_question("What should go in the pot?", "Chocolate", "Onion")
 	Globals.loaded_save.keywords["[ing1]"] = chosen
 	if chosen == "Chocolate":
@@ -26,6 +27,7 @@ func _start():
 
 	Globals.dialogue_played.emit("chef-part2")
 	await Globals.finished_dialogue
+	Globals.freeze_player.emit()
 	await _ask_question("What should go in the pot?", "Banana", "Chicken stock")
 	Globals.loaded_save.keywords["[ing2]"] = chosen
 

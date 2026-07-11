@@ -65,7 +65,6 @@ func handle_interaction():
 		if (npc.get_parent().is_in_group("interactables")):
 				npc.get_parent().on_interact()
 	interactable_npcs = []
-		
 
 func _npc_enter_interaction_area(npc:Node2D):
 	if (npc in COLLSION_NODES):
@@ -75,22 +74,26 @@ func _npc_enter_interaction_area(npc:Node2D):
 	interactable_npcs.append(npc)
 	_update_marks()
 
+
 func _npc_exit_interaction_area(npc:Node2D):
 	interactable_npcs.erase(npc)
 	_update_marks()
 
 func _update_marks():
-	print("updates marks")
 	if interactable_npcs.is_empty():
 		Globals.mark_character.emit(Globals.CHARACTER.NONE)
-		print("none")
-		print(interactable_npcs)
 	else:
-		var npc = interactable_npcs[0].get_node("..")
-		if (npc.is_in_group("characters")):
-			Globals.mark_character.emit(npc.npcEnum)
-			print("emits mark characters")
-		print(interactable_npcs)
+		var found = false
+		for i in interactable_npcs:
+			var npc = i.get_node("..")
+			if (npc.is_in_group("characters")):
+				Globals.mark_character.emit(npc.npcEnum)
+				print("emits mark characters")
+				found = true
+				break
+
+		if not found:
+			Globals.mark_character.emit(Globals.CHARACTER.NONE)
 
 
 func _physics_process(_delta: float) -> void:

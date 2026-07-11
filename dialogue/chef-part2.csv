@@ -1,6 +1,6 @@
 you,normal,I declare the first ingredient of our soup is... [ing1]!
 chef,normal,[ing1] is going in the soup!
-cochef,normal,Now to add some volume to the soup‚ we'll throw in some chick stock!
+cochef,normal,Now to add some volume to the soup‚ we'll throw in some chicken stock!
 chef,normal,Chicken stock? Any [positive descriptor] soup would have bananas!
 chef,normal,Who would want chicken stock in their [best soup type] soup?
 you,think,What will I choose?

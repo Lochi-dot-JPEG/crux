@@ -39,6 +39,22 @@ enum CHARACTER {
 	NONE,
 }
 
+const KEYWORD_QUESTIONS = {
+	"ship name":"What is your ship called?",
+	"you":"You are captain of the ship. What does your crew call you?",
+	"chef":"What is your head chef's name?",
+	"cochef":"What is the sous-chef's name?",
+	"medic":"What is the name of your medic?",
+	"cannon":"What is the name of your cannoneer?",
+	"best soup type":"What is your favourite type of soup? ([your answer] soup)",
+	"positive descriptor":"What adjective do you call things that you find cool?",
+	"container":"What will you cook your soup in?",
+	"ing1":"",
+	"ing2":"",
+	"not so miracle cure":"What does this shabby medic put on everything that never works?",
+	"treasure":"What did you leave behind?",
+}
+
 const CHARACTER_TO_SPRITEFRAMES = {
 	CHARACTER.CHEF:preload("res://sprites/chef.tres"),
 	CHARACTER.SOUSCHEF:preload("res://sprites/sous.tres"),
