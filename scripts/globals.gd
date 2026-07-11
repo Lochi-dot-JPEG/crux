@@ -7,14 +7,18 @@ var high_score = 100
 var score = 0
 var loaded_settings : SettingsFile
 var loaded_save : SaveFile
+var dialogue_player = false
 
 # Configure the template
 const MAIN_SCENE_FILE = "res://ui/main/main.tscn"
 const GAME_TITLE = "Your Game Title"
 
 signal dialogue_played(file)
+signal switch_scene(packed_scene : PackedScene)
+signal finished_dialogue
 
 var camera: Camera2D
+
 
 enum CHARACTER {
 	YOU,

@@ -2,7 +2,6 @@ extends Control
 
 @onready var name_label : Label = %Name
 @onready var text_label : RichTextLabel = %Line
-
 @onready var question_box : Control = %QuestionBox
 @onready var question_label : Label = %Question
 @onready var text_edit : TextEdit = %TextEdit
@@ -24,6 +23,7 @@ func _next_line() -> void:
 		loaded_lines = []
 		hide()
 		Globals.dialogue_target_camera(Globals.CHARACTER.YOU)
+		Globals.finished_dialogue.emit()
 		return
 	_show_dialogue_line(current_line)
 
@@ -38,11 +38,13 @@ func _show_dialogue_line(line_number : int):
 	text_label.text = converted_text
 	name_label.text = character_name
 
+
 func _input(event: InputEvent) -> void:
 	if not visible:
 		return
 	if not question_box.visible and event.is_action_pressed("next_dialogue"):
 		_next_line()
+
 
 func _ensure_keyword_exists(keyword_id : String):
 	if keyword_id not in Globals.loaded_save.keywords.keys():
@@ -55,6 +57,7 @@ func _ensure_keyword_exists(keyword_id : String):
 			# TODO confirm if they really want this word
 		Globals.loaded_save.keywords[keyword_id] = text_edit.text
 		question_box.hide()
+
 
 func _ensure_name_exists(character : Globals.CHARACTER):
 	if character not in Globals.loaded_save.character_names.keys():
@@ -77,6 +80,7 @@ func _show_question(question : String):
 	text_edit.grab_focus()
 	text_edit.placeholder_text = ""
 	question_label.text = question
+
 
 func _substitute_keywords(text) -> String:
 	var regexed_keywords = keyword_regex.search_all(text)

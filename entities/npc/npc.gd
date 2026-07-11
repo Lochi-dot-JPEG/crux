@@ -14,8 +14,11 @@ func update_sprite():
 			pass
 
 func on_interact():
-	Globals.dialogue_played.emit("test")
 	match npcEnum:
+		Globals.CHARACTER.SOUSCHEF:
+			Globals.dialogue_played.emit("souschef-warning")
 		Globals.CHARACTER.CHEF:
-			# TODO use globals to show dialogue
+			Globals.dialogue_played.emit("chef-intro")
 			pass
+		Globals.CHARACTER.YOU:
+			Globals.dialogue_played.emit("test")
