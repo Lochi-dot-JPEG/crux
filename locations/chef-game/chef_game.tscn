@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://bdqyfi7cfjg86"]
 
 [ext_resource type="Script" uid="uid://cotjw5tw7mgol" path="res://locations/chef-game/chef_game.gd" id="1_5et14"]
+[ext_resource type="SpriteFrames" uid="uid://dphktdl2dasn0" path="res://sprites/chef.tres" id="2_p88b8"]
+[ext_resource type="SpriteFrames" uid="uid://homlyqkfjtjl" path="res://sprites/player.tres" id="3_0iro1"]
+[ext_resource type="SpriteFrames" uid="uid://6kvuv52rgtvc" path="res://sprites/sous.tres" id="4_7sioi"]
 
 [node name="ChefGame" type="Control" unique_id=1928149109]
 layout_mode = 3
@@ -13,6 +16,7 @@ script = ExtResource("1_5et14")
 
 [node name="Question" type="VBoxContainer" parent="." unique_id=1026673750]
 unique_name_in_owner = true
+z_index = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -28,6 +32,7 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="Question" unique_id=907414256]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 text = "What will you put in the pot?"
 
@@ -44,3 +49,27 @@ text = "Put in some chocolate!"
 unique_name_in_owner = true
 layout_mode = 2
 text = "Put in some chocolate!"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Question" unique_id=1213156116]
+position = Vector2(-261, 122)
+scale = Vector2(0.15, 0.15)
+sprite_frames = ExtResource("2_p88b8")
+autoplay = "default"
+frame_progress = 0.76333845
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Question" unique_id=1112564840]
+position = Vector2(118, 367)
+scale = Vector2(0.15, 0.15)
+sprite_frames = ExtResource("3_0iro1")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.083465554
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Question" unique_id=322496588]
+position = Vector2(536, 151)
+scale = Vector2(0.15, 0.15)
+sprite_frames = ExtResource("4_7sioi")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.6037074
+flip_h = true
