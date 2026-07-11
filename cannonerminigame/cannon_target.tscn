@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bf3i2deqw4dyw"]
+
+[ext_resource type="Texture2D" uid="uid://jvw84fgpqv53" path="res://sprites/items/ice.png" id="1_io6eq"]
+[ext_resource type="Script" uid="uid://dke1lrrim520h" path="res://cannonerminigame/cannon_target.gd" id="1_xiklb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n1800"]
+radius = 146.84004
+
+[node name="cannon_target" type="Node2D" unique_id=46553560]
+script = ExtResource("1_xiklb")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2025757044]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=725456111]
+texture = ExtResource("1_io6eq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1335281740]
+shape = SubResource("CircleShape2D_n1800")
