@@ -12,21 +12,30 @@ offset_left = -248.0
 offset_top = -382.0
 offset_right = 1051.0
 offset_bottom = 982.0
-color = Color(0.3515629, 0.3515629, 0.35156286, 1)
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1737076605]
-custom_maximum_size = Vector2(767, 1364)
-offset_top = -542.0
-offset_right = 767.0
-offset_bottom = 822.0
+color = Color(0.57254905, 1, 1, 1)
 
 [node name="cannon" parent="." unique_id=1509060642 instance=ExtResource("1_pvcui")]
-position = Vector2(384, 400)
+position = Vector2(400, 400)
 
 [node name="center" type="Node2D" parent="." unique_id=2021777787]
-position = Vector2(384, -16)
+position = Vector2(400, 0)
 
-[node name="Timer" type="Timer" parent="." unique_id=2142225011]
+[node name="targetTimer" type="Timer" parent="." unique_id=2142225011]
 wait_time = 5.0
 
-[connection signal="timeout" from="Timer" to="." method="spawn_new"]
+[node name="ballTimer" type="Timer" parent="." unique_id=673716056]
+one_shot = true
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1924631251]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=481298165]
+offset_right = 764.0
+offset_bottom = 23.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Shoot down the enemy attacks !!"
+horizontal_alignment = 1
+
+[connection signal="timeout" from="targetTimer" to="." method="spawn_new"]
