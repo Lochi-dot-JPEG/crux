@@ -14,7 +14,6 @@ var current_line : int = 0
 
 func _ready() -> void:
 	Globals.dialogue_played.connect(_load_dialogue)
-	
 
 
 func _next_line() -> void:
@@ -36,7 +35,9 @@ func _show_dialogue_line(line_number : int):
 	# TODO load animation here
 	var character_name = await _get_character_name(_line.character)
 	var converted_text = await _substitute_keywords(_line.text)
+	Globals.talk_thinking = _line.animation == "think"
 	Globals.talk_character = _line.character
+	print("aniation is " + _line.animation)
 	text_label.text = converted_text
 	name_label.text = character_name
 

@@ -28,7 +28,6 @@ func _unfreeze() -> void:
 
 func _finished_dialogue() -> void:
 	can_move = true
-	print("finsiehd dialogues")
 
 
 func handle_movement():
