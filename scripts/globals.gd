@@ -69,6 +69,12 @@ const CHARACTER_TO_DIALOGUE_KEYWORD = {
 	"[medic]": CHARACTER.MEDIC,
 }
 
+const HEAL_SPRITES = [
+	preload("res://sprites/items/bandaid.png"),
+	preload("res://sprites/items/shot.png"),
+	preload("res://sprites/items/ice.png"),
+]
+
 func dialogue_target_camera(target_character : CHARACTER):
 	if target_character == CHARACTER.YOU:
 		camera.reset_target()

@@ -62,7 +62,7 @@ position = Vector2(464, 207)
 npcEnum = 3
 
 [node name="Npc2" parent="." unique_id=1845248626 instance=ExtResource("2_5674f")]
-position = Vector2(-775, 427)
+position = Vector2(-1244, -157)
 npcEnum = 1
 
 [node name="Npc3" parent="." unique_id=2010972089 instance=ExtResource("2_5674f")]
