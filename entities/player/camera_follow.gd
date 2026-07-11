@@ -8,6 +8,9 @@ var target_override:Node2D
 @export var YMIN:float;
 @export var YMAX:float;
 
+@onready var dialogue_control : Control = get_tree().get_first_node_in_group("dialogue")
+@onready var question_box : Container = dialogue_control.get_child(-1)
+
 const ZOOMED_IN = Vector2(1.0,1.0)
 const ZOOMED_OUT = Vector2(0.6,0.6)
 
@@ -25,6 +28,8 @@ func reset_target():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if (question_box.is_visible_in_tree()):
+		return
 	if Globals.talk_character == Globals.CHARACTER.NONE:
 		zoom = zoom.lerp(ZOOMED_OUT, delta * 3)
 	else:
@@ -32,6 +37,10 @@ func _process(delta: float) -> void:
 	global_transform = lerp(global_transform, 
 	target.global_transform if target_override == null 
 	else target_override.global_transform, SMOOTHING)
+	
+	if target_override != null:
+		return
+	
 	if (position.x > XMAX):
 		position.x = XMAX
 	if (position.x < XMIN):
