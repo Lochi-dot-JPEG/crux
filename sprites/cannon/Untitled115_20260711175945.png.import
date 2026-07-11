@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct3iigsh7320n"
-path="res://.godot/imported/e8.png-f323fe04c52ed152eb041bc7a91060ee.ctex"
+uid="uid://bv1qv6atfl8nm"
+path="res://.godot/imported/Untitled115_20260711175945.png-600328467b764896d62047592d8b8313.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/cannon/e8.png"
-dest_files=["res://.godot/imported/e8.png-f323fe04c52ed152eb041bc7a91060ee.ctex"]
+source_file="res://sprites/cannon/Untitled115_20260711175945.png"
+dest_files=["res://.godot/imported/Untitled115_20260711175945.png-600328467b764896d62047592d8b8313.ctex"]
 
 [params]
 
