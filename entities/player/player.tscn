@@ -7,15 +7,15 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_2tu2c"]
 radius = 124.01613
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qnpof"]
-radius = 58.034473
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bls4j"]
+radius = 8.0
+height = 42.0
 
 [node name="Player" type="Node2D" unique_id=1506923292]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=823576075 node_paths=PackedStringArray("sprite", "PLAYER_COLLSION_NODE")]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=823576075 node_paths=PackedStringArray("sprite")]
 script = ExtResource("1_symyc")
 sprite = NodePath("Sprite")
-PLAYER_COLLSION_NODE = NodePath(".")
 IDLE = "idle"
 WALK = "walk"
 
@@ -29,15 +29,22 @@ debug_color = Color(0.5647387, 0.5585411, 0, 0.41960785)
 scale = Vector2(0.035, 0.035)
 sprite_frames = ExtResource("2_abrql")
 animation = &"walk"
-frame_progress = 0.801629
+frame_progress = 0.48491177
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1555644577]
-shape = SubResource("CircleShape2D_qnpof")
+position = Vector2(0, 48)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_bls4j")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=108528432 node_paths=PackedStringArray("target")]
+zoom = Vector2(0.5, 0.5)
 script = ExtResource("3_sglur")
 target = NodePath("../CharacterBody2D")
 SMOOTHING = 0.1
+XMIN = -1000.0
+XMAX = 1100.0
+YMIN = -200.0
+YMAX = 200.0
 
 [connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_npc_enter_interaction_area"]
 [connection signal="body_exited" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_npc_exit_interaction_area"]

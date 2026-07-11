@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnpof"]
 size = Vector2(135, 139)
 
-[node name="Npc" type="Node2D" unique_id=1131074689 groups=["characters"]]
+[node name="Npc" type="Node2D" unique_id=1131074689 groups=["characters", "interactables"]]
 script = ExtResource("1_e3lg2")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=73165341]

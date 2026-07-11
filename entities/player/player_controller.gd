@@ -2,16 +2,30 @@ extends CharacterBody2D
 
 @export var sprite : AnimatedSprite2D
 @export var SPEED = 300.0
-@export var PLAYER_COLLSION_NODE : Node2D
+@export var COLLSION_NODES : Array[Node2D]
 
 @export_category("Animations")
 @export var IDLE:String
 @export var WALK:String
 
 var interactable_npcs:Array[Node2D] = []
+var can_move = true
+
+func _ready() -> void:
+	Globals.finished_dialogue.connect(_finished_dialogue)
+
+func _finished_dialogue() -> void:
+	can_move = true
+	print("finsiehd dialogues")
+
 
 func handle_movement():
+	print(can_move)
+	if not can_move:
+		return
 	var direction := Input.get_vector("left", "right", "up", "down")
+	if Globals.camera.override_target != null:
+		pass
 	if direction:
 		sprite.play(WALK)
 		velocity.x = direction.x * SPEED
@@ -32,10 +46,14 @@ func handle_interaction():
 	if not Input.is_action_just_pressed("interact"):
 		return
 	for npc:Node2D in interactable_npcs:
-		npc.get_parent().on_interact()
+		can_move = false
+		if (npc.get_parent().is_in_group("interactables")):
+				npc.get_parent().on_interact()
+	interactable_npcs = []
+		
 
 func _npc_enter_interaction_area(npc:Node2D):
-	if (npc == PLAYER_COLLSION_NODE):
+	if (npc in COLLSION_NODES):
 		return
 	interactable_npcs.append(npc)
 
