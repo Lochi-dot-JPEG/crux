@@ -25,16 +25,30 @@ func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_DISABLED
 
 func _start():
+	if patient_health >= 98 or Globals.loaded_save.won_medic == SaveFile.WIN_STATES.WON:
+		_finished()
+		print("early finish")
+		return
+
+	Globals.dialogue_played.emit("medic-intro")
+	await Globals.finished_dialogue
+	show()
+	Globals.freeze_player.emit()
 	process_mode = Node.PROCESS_MODE_INHERIT
 	timer.wait_time = 30
 	timer.start()
 	await timer.timeout
+
 	_finished()
 
 func _finished():
 	if Globals.loaded_save.won_medic == SaveFile.WIN_STATES.UNDETERMINED:
 		Globals.loaded_save.won_medic = SaveFile.WIN_STATES.LOST
+	elif Globals.loaded_save.won_medic == SaveFile.WIN_STATES.WON:
+		Globals.dialogue_played.emit("win-medic")
+		await Globals.finished_dialogue
 	hide()
+	Globals.unfreeze_player.emit()
 	process_mode = Node.PROCESS_MODE_DISABLED
 
 func _player_area_entered(area):
@@ -67,10 +81,9 @@ func _physics_process(delta: float) -> void:
 
 	if patient_health >= 98:
 		Globals.loaded_save.won_medic = SaveFile.WIN_STATES.WON
-		Globals.dialogue_played.emit("win-medic")
-		await Globals.finished_dialogue
 		hide()
 		process_mode = Node.PROCESS_MODE_DISABLED
+		_finished()
 
 	health.value = patient_health
 

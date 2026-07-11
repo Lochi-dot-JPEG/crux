@@ -16,6 +16,8 @@ const GAME_TITLE = "Your Game Title"
 signal dialogue_played(file)
 signal switch_scene(packed_scene : PackedScene)
 signal finished_dialogue
+signal unfreeze_player
+signal freeze_player
 
 var camera: Camera2D
 

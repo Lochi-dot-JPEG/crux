@@ -77,10 +77,10 @@ func _ensure_name_exists(character : Globals.CHARACTER):
 
 func _show_question(question : String):
 	question_box.show()
-	text_edit.text = ""
 	text_edit.grab_focus()
 	text_edit.placeholder_text = ""
 	question_label.text = question
+	text_edit.text = ""
 
 
 func _substitute_keywords(text) -> String:

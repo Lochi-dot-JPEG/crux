@@ -58,8 +58,20 @@ position = Vector2(1, 2)
 scale = Vector2(2, 2)
 
 [node name="Npc" parent="." unique_id=1131074689 instance=ExtResource("2_5674f")]
-position = Vector2(634, 248)
+position = Vector2(464, 207)
+npcEnum = 3
+
+[node name="Npc2" parent="." unique_id=1845248626 instance=ExtResource("2_5674f")]
+position = Vector2(-775, 427)
 npcEnum = 1
+
+[node name="Npc3" parent="." unique_id=2010972089 instance=ExtResource("2_5674f")]
+position = Vector2(968, -498)
+npcEnum = 2
+
+[node name="Npc4" parent="." unique_id=748060543 instance=ExtResource("2_5674f")]
+position = Vector2(-595, 275)
+npcEnum = 4
 
 [node name="handle" type="Parallax2D" parent="." unique_id=412141692]
 modulate = Color(0.9979226, 0.8676202, 0.6891002, 1)
