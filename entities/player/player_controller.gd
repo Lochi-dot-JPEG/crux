@@ -13,12 +13,21 @@ extends CharacterBody2D
 var interactable_npcs:Array[Node2D] = []
 var can_move = true
 
+@onready var timer = Timer.new()
 func _ready() -> void:
+	timer.wait_time = 2
+	timer.one_shot = false
+	timer.timeout.connect()
+	timer.start()
+
 
 	Globals.freeze_player.connect(_freeze)
 	Globals.unfreeze_player.connect(_unfreeze)
 	Globals.finished_dialogue.connect(_finished_dialogue)
 	Globals.mark_character.emit(Globals.CHARACTER.NONE)
+
+func _rescan_finished():
+	print("rescanned finished")
 
 
 func _freeze() -> void:
