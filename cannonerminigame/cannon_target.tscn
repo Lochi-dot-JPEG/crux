@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bf3i2deqw4dyw"]
 
-[ext_resource type="Texture2D" uid="uid://jvw84fgpqv53" path="res://sprites/items/ice.png" id="1_io6eq"]
 [ext_resource type="Script" uid="uid://dke1lrrim520h" path="res://cannonerminigame/cannon_target.gd" id="1_xiklb"]
+[ext_resource type="Texture2D" uid="uid://yab37adsjmdf" path="res://sprites/items/target.png" id="2_y48a6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n1800"]
 radius = 64.070274
@@ -13,7 +13,7 @@ script = ExtResource("1_xiklb")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=725456111]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_io6eq")
+texture = ExtResource("2_y48a6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1335281740]
 shape = SubResource("CircleShape2D_n1800")
