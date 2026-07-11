@@ -3,9 +3,6 @@
 [ext_resource type="Script" uid="uid://c3chrwu0m5t50" path="res://cannonerminigame/cannon.gd" id="1_23j6s"]
 [ext_resource type="Texture2D" uid="uid://dsb74tqjfllo0" path="res://sprites/items/evilmedkit.png" id="1_i10un"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1800"]
-size = Vector2(101, 67.5)
-
 [node name="cannon" type="Node2D" unique_id=1509060642]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=2028578172]
@@ -15,9 +12,5 @@ script = ExtResource("1_23j6s")
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=183437527]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_i10un")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=393957234]
-position = Vector2(-0.5, 8.25)
-shape = SubResource("RectangleShape2D_n1800")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1120578636]

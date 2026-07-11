@@ -21,6 +21,7 @@ signal freeze_player
 
 var camera: Camera2D
 
+var scoreCannoner = 0
 
 enum CHARACTER {
 	YOU,
@@ -65,3 +66,7 @@ func dialogue_target_camera(target_character : CHARACTER):
 			continue
 		camera.override_target(c)
 		break
+
+func add_cannoner():
+	score += 1
+	print(score)

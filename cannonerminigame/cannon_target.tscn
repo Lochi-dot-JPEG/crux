@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dke1lrrim520h" path="res://cannonerminigame/cannon_target.gd" id="1_xiklb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n1800"]
-radius = 86.46965
+radius = 64.070274
 
 [node name="cannon_target" type="Node2D" unique_id=46553560]
 script = ExtResource("1_xiklb")
@@ -17,3 +17,6 @@ texture = ExtResource("1_io6eq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1335281740]
 shape = SubResource("CircleShape2D_n1800")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
