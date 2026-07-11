@@ -41,6 +41,12 @@ characters="contains all NPCs"
 
 theme/custom="uid://bxroux3q0c77q"
 
+[importer_defaults]
+
+animation_library={
+&"fbx/embedded_image_handling": 2
+}
+
 [input]
 
 down={
@@ -88,3 +94,4 @@ next_dialogue={
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+viewport/hdr_2d=true
