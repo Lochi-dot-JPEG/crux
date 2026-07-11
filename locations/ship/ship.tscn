@@ -79,6 +79,7 @@ texture = ExtResource("9_1r7i5")
 modulate = Color(0.9979226, 0.8676202, 0.6891002, 1)
 self_modulate = Color(0.5752728, 0.31179473, 0.07935459, 1)
 z_index = 4096
+scroll_offset = Vector2(96, 157)
 
 [node name="Sprite2D" type="Sprite2D" parent="front" unique_id=1389571868]
 texture = ExtResource("10_8yuv6")
