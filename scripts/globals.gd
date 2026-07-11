@@ -18,8 +18,13 @@ signal switch_scene(packed_scene : PackedScene)
 signal finished_dialogue
 signal unfreeze_player
 signal freeze_player
+signal changed_talker
 
-var talk_character : CHARACTER = CHARACTER.NONE
+var talk_character : CHARACTER = CHARACTER.NONE:
+	set(value):
+		talk_character = value
+		changed_talker.emit()
+var talk_thinking = false # TODO make this trigger
 
 var camera: Camera2D
 
@@ -31,6 +36,13 @@ enum CHARACTER {
 	CANNONEER,
 	SOUSCHEF,
 	NONE,
+}
+
+const CHARACTER_TO_SPRITEFRAMES = {
+	CHARACTER.CHEF:preload("res://sprites/chef.tres"),
+	CHARACTER.SOUSCHEF:preload("res://sprites/sous.tres"),
+	CHARACTER.CANNONEER:preload("res://sprites/cannon.tres"),
+	CHARACTER.MEDIC:preload("res://sprites/medic.tres"),
 }
 
 const CHARACTER_TO_ROLE = {

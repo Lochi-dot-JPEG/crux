@@ -5,15 +5,21 @@ extends Node2D
 
 func _ready() -> void:
 	add_to_group("characters")
+	Globals.changed_talker.connect(_animate)
+	update_sprite()
 
 
 func update_sprite():
-	match npcEnum:
-		Globals.CHARACTER.CHEF:
-			pass
-		Globals.CHARACTER.SOUSCHEF:
-			pass
+	npcAnimatedSprite.sprite_frames = Globals.CHARACTER_TO_SPRITEFRAMES[npcEnum]
 
+func _animate():
+	if Globals.talk_character == npcEnum:
+		if Globals.talk_thinking and npcAnimatedSprite.sprite_frames.has_animation("thinktalk"):
+			npcAnimatedSprite.play("thinktalk")
+		else:
+			npcAnimatedSprite.play("talk")
+	else:
+		npcAnimatedSprite.play("idle")
 
 func on_interact():
 	match npcEnum:

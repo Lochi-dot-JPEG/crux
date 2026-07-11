@@ -8,6 +8,9 @@ var target_override:Node2D
 @export var YMIN:float;
 @export var YMAX:float;
 
+const ZOOMED_IN = Vector2(1.0,1.0)
+const ZOOMED_OUT = Vector2(0.5,0.5)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if target == null:
@@ -16,14 +19,16 @@ func _ready() -> void:
 
 func override_target(target:Node2D):
 	target_override = target
-	zoom = Vector2(1,1)
 
 func reset_target():
 	target_override = null
-	zoom = Vector2(0.5,0.5)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if Globals.talk_character == Globals.CHARACTER.NONE:
+		zoom = zoom.lerp(ZOOMED_OUT, delta * 3)
+	else:
+		zoom = zoom.lerp(ZOOMED_IN, delta * 3)
 	global_transform = lerp(global_transform, 
 	target.global_transform if target_override == null 
 	else target_override.global_transform, SMOOTHING)
