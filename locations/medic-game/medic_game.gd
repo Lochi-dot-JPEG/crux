@@ -16,6 +16,7 @@ var patient_health = 0
 @onready var health : ProgressBar = %ProgressBar
 @onready var timer : Timer = %GameTime
 @onready var time_label : Label = %TimeLabel
+@onready var sprite : AnimatedSprite2D = %Sprite
 
 func _ready() -> void:
 	heal_timer = HEAL_COOLDOWN
@@ -76,8 +77,18 @@ func _create_heal() -> void:
 func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("left"):
 		player.position.x = clampf(player.position.x - delta * PLAYER_SPEED, LEFT, RIGHT)
+		sprite.flip_h = true
+		sprite.play("walk")
 	if Input.is_action_pressed("right"):
 		player.position.x = clampf(player.position.x + delta * PLAYER_SPEED, LEFT, RIGHT)
+		sprite.flip_h = false
+		sprite.play("walk")
+	if Input.is_action_pressed("left") and Input.is_action_pressed("right"):
+		sprite.play("idle")
+	if not Input.is_action_pressed("left") and not Input.is_action_pressed("right"):
+		sprite.play("idle")
+
+
 
 	if patient_health >= 98:
 		Globals.loaded_save.won_medic = SaveFile.WIN_STATES.WON
