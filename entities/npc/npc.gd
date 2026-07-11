@@ -25,5 +25,13 @@ func on_interact():
 			chef_game._start()
 			#get_tree().root.get_node("Main")._switch_scene(load("res://locations/chef-game/chef_game.tscn"))
 
+		Globals.CHARACTER.MEDIC:
+			Globals.dialogue_played.emit("medic-intro")
+			await Globals.finished_dialogue
+			var medic_game = get_tree().get_first_node_in_group("medicgame")
+			medic_game.show()
+			medic_game._start()
+
+			var chef_game = get_tree().get_first_node_in_group("chefgame")
 		Globals.CHARACTER.YOU:
 			Globals.dialogue_played.emit("test")

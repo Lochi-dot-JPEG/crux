@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bbo4bef8gsmne" path="res://ui/dialogue/dialogue.tscn" id="1_xmswo"]
 [ext_resource type="PackedScene" uid="uid://bdqyfi7cfjg86" path="res://locations/chef-game/chef_game.tscn" id="2_4d6w6"]
+[ext_resource type="PackedScene" uid="uid://nktjmhmqbbht" path="res://locations/medic-game/medic_game.tscn" id="3_e0nub"]
 
 [node name="Hud" type="Control" unique_id=1234464146]
 layout_mode = 3
@@ -17,3 +18,6 @@ layout_mode = 1
 [node name="ChefGame" parent="." unique_id=1928149109 groups=["chefgame"] instance=ExtResource("2_4d6w6")]
 visible = false
 layout_mode = 1
+
+[node name="MedicGame" parent="." unique_id=1205038799 groups=["medicgame"] instance=ExtResource("3_e0nub")]
+visible = false

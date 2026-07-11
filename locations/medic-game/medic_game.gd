@@ -22,9 +22,10 @@ func _ready() -> void:
 	ice_timer = ICE_COOLDOWN
 	player.area_entered.connect(_player_area_entered)
 	player.position.x = (LEFT + RIGHT)  / 2.0
-	_start()
+	process_mode = Node.PROCESS_MODE_DISABLED
 
 func _start():
+	process_mode = Node.PROCESS_MODE_INHERIT
 	timer.wait_time = 30
 	timer.start()
 	await timer.timeout
@@ -65,6 +66,9 @@ func _physics_process(delta: float) -> void:
 		player.position.x = clampf(player.position.x + delta * PLAYER_SPEED, LEFT, RIGHT)
 
 	if patient_health >= 98:
+		Globals.loaded_save.won_medic = SaveFile.WIN_STATES.WON
+		Globals.dialogue_played.emit("win-medic")
+		await Globals.finished_dialogue
 		hide()
 		process_mode = Node.PROCESS_MODE_DISABLED
 
