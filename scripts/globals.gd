@@ -47,7 +47,7 @@ const KEYWORD_QUESTIONS = {
 	"medic":"What is the name of your medic?",
 	"cannon":"What is the name of your cannoneer?",
 	"best soup type":"What is your favourite type of soup? ([your answer] soup)",
-	"positive descriptor":"What do you call things that are cool?",
+	"positive descriptor":"What adjective do you call things that you find cool?",
 	"container":"What will you cook your soup in?",
 	"ing1":"",
 	"ing2":"",

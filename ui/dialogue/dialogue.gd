@@ -52,7 +52,12 @@ func _ensure_keyword_exists(keyword_id : String):
 
 	if keyword_id not in Globals.loaded_save.keywords.keys():
 		var valid_find = false
-		_show_question("What word captures the crux of " + str(keyword_id).trim_suffix("]").trim_prefix("[")) # TODO dont just use ids
+
+		var trimmed = str(keyword_id).trim_suffix("]").trim_prefix("[")
+		if trimmed in Globals.KEYWORD_QUESTIONS.keys():
+			_show_question(Globals.KEYWORD_QUESTIONS[trimmed])
+		else:
+			_show_question("What word captures the crux of " + trimmed)
 		while not valid_find:
 			await confirm_button.pressed
 			if text_edit.text != "":
