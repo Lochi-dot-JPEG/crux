@@ -45,6 +45,7 @@ func _start():
 		await Globals.finished_dialogue
 
 	Globals.unfreeze_player.emit()
+	hide()
 
 
 func _pressed_button(choice : Button):
