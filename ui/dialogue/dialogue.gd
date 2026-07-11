@@ -28,6 +28,7 @@ func _next_line() -> void:
 
 func _show_dialogue_line(line_number : int):
 	var _line : DialogueLine = loaded_lines[line_number]
+	Globals.dialogue_target_camera(_line.character)
 	show()
 	var converted_text = await _substitute_keywords(_line.text)
 	print(converted_text)
