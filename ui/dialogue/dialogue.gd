@@ -24,6 +24,7 @@ func _next_line() -> void:
 		hide()
 		Globals.dialogue_target_camera(Globals.CHARACTER.YOU)
 		Globals.finished_dialogue.emit()
+		Globals.talk_character = Globals.CHARACTER.NONE
 		return
 	_show_dialogue_line(current_line)
 
@@ -35,6 +36,7 @@ func _show_dialogue_line(line_number : int):
 	# TODO load animation here
 	var character_name = await _get_character_name(_line.character)
 	var converted_text = await _substitute_keywords(_line.text)
+	Globals.talk_character = _line.character
 	text_label.text = converted_text
 	name_label.text = character_name
 

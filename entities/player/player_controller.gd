@@ -7,6 +7,7 @@ extends CharacterBody2D
 @export_category("Animations")
 @export var IDLE:String
 @export var WALK:String
+@export var TALK:String
 
 var interactable_npcs:Array[Node2D] = []
 var can_move = true
@@ -16,10 +17,14 @@ func _ready() -> void:
 	Globals.unfreeze_player.connect(_unfreeze)
 	Globals.finished_dialogue.connect(_finished_dialogue)
 
+
 func _freeze() -> void:
 	can_move = false
+
+
 func _unfreeze() -> void:
 	can_move = true
+
 
 func _finished_dialogue() -> void:
 	can_move = true
@@ -44,7 +49,10 @@ func handle_movement():
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.y = move_toward(velocity.y, 0, SPEED)
-		sprite.play(IDLE)
+		if Globals.talk_character == Globals.CHARACTER.YOU:
+			sprite.play(TALK)
+		else:
+			sprite.play(IDLE)
 
 	move_and_slide()
 

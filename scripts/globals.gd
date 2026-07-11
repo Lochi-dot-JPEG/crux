@@ -19,6 +19,8 @@ signal finished_dialogue
 signal unfreeze_player
 signal freeze_player
 
+var talk_character : CHARACTER = CHARACTER.NONE
+
 var camera: Camera2D
 
 
@@ -28,6 +30,7 @@ enum CHARACTER {
 	MEDIC,
 	CANNONEER,
 	SOUSCHEF,
+	NONE,
 }
 
 const CHARACTER_TO_ROLE = {
