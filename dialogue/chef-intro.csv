@@ -1,12 +1,12 @@
-chef,normal,I'm so hungry!! I could really go for some [best soup type] soup
-cochef,normal,Some [best soup type] soup? You make this all of the time!
+chef,normal,I'm so hungry!! I could really go for some [best soup type] soup.
+cochef,normal,Some [best soup type] soup? You make it all of the time!
 cochef,normal,(and it never turns out [positive descriptor]..)
 chef,normal,What could you mean? I make the [positive descriptor]est [best soup type] soup on this ship!
 cochef,think,Captain! Can you please help me out here. 
-cochef,normal,You don't want to be eating the captain's [best soup type] soup do you?
+cochef,normal,You'd want to have the [best soup type] soup, don't you?
 cochef,normal,Try taking my advice!
 chef,normal,Don't take [cochef]'s advice!
 chef,normal,I know best!
-chef,normal,and if you don't follow what I. [chef] head chef of the ship says.
+chef,normal,and if you don't follow what I. [chef], head chef of the ship says,
 chef,normal,You'll never eat my food again!
-you,think,I don't think I really want to but I can't just let [chef] go off on his own.
+you,think,I don't think I really want to but I can't just let [cook] go off on her own.
