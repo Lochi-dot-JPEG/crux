@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dm522v48bf7kk" path="res://cannonerminigame/cannon.tscn" id="1_pvcui"]
 [ext_resource type="Script" uid="uid://blcpv48wkpw2s" path="res://cannonerminigame/cannongame.gd" id="1_rifye"]
+[ext_resource type="Texture2D" uid="uid://b26qvu5au2wkn" path="res://sprites/ship/seabacksrgb.png" id="3_58b4b"]
 
 [node name="Cannongame" type="Node2D" unique_id=558961751]
 script = ExtResource("1_rifye")
@@ -27,6 +28,11 @@ wait_time = 5.0
 [node name="ballTimer" type="Timer" parent="." unique_id=673716056]
 one_shot = true
 autostart = true
+
+[node name="Seabacksrgb" type="Sprite2D" parent="." unique_id=911108033]
+position = Vector2(494, 523)
+scale = Vector2(0.68385416, 0.40601853)
+texture = ExtResource("3_58b4b")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1924631251]
 
