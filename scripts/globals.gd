@@ -113,5 +113,4 @@ func dialogue_target_camera(target_character : CHARACTER):
 		break
 
 func add_cannoner():
-	score += 1
-	print(score)
+	scoreCannoner += 1

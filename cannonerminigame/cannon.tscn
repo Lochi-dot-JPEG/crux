@@ -13,4 +13,6 @@ script = ExtResource("1_23j6s")
 position = Vector2(3, -64)
 texture = ExtResource("2_ohqjr")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1120578636]
+[node name="ShootFrom" type="Node2D" parent="CharacterBody2D/Sprite2D" unique_id=893607357]
+unique_name_in_owner = true
+position = Vector2(-3, -106)
