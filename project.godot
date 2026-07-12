@@ -37,6 +37,7 @@ enabled=PackedStringArray("res://addons/csv-data-importer/plugin.cfg")
 characters="contains all NPCs"
 interactables="contains anyhting that can be interacted with"
 dialogue="contains the dialogue UI"
+tasks="contains all tasks"
 
 [gui]
 

@@ -21,6 +21,7 @@ signal unfreeze_player
 signal freeze_player
 signal changed_talker
 signal mark_character(character : CHARACTER)
+signal complete_task(character : CHARACTER)
 
 var talk_character : CHARACTER = CHARACTER.NONE:
 	set(value):
