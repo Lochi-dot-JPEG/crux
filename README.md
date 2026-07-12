@@ -1,6 +1,12 @@
 # Lost Treasure Fever
 
+Talk to people around a pirate ship, you get to name everything in this world.
+
 Made for horizons crux.
+
+## Theme : The crux of storytelling
+
+The crux of storytelling is shown in this game as the ability for storytelling decisions to impact the context of stories.
 
 ## Dialogue Format
 
@@ -14,7 +20,8 @@ e.g.
 
 you,normal,This is what I say
 
-### Character Names
+## Screenshots
 
-captain (normal, thinking)
-cannoner/gunner (idle: spinning gun)
+## AI usage
+
+NONE

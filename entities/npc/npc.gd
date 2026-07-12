@@ -40,8 +40,9 @@ func on_interact():
 			Globals.dialogue_played.emit("chef-intro")
 			await Globals.finished_dialogue
 			var chef_game = get_tree().get_first_node_in_group("chefgame")
-			chef_game.show()
-			chef_game._start()
+			if chef_game:
+				chef_game.show()
+				chef_game._start()
 
 		Globals.CHARACTER.MEDIC:
 			var medic_game = get_tree().get_first_node_in_group("medicgame")
@@ -50,7 +51,8 @@ func on_interact():
 			Globals.dialogue_played.emit("cannon-intro")
 			await Globals.finished_dialogue
 			var cannon_game = get_tree().get_first_node_in_group("cannongame")
-			cannon_game._start()
+			if cannon_game:
+				cannon_game._start()
 		Globals.CHARACTER.YOU:
 			Globals.dialogue_played.emit("test")
 		Globals.CHARACTER.NAVIGATOR:
