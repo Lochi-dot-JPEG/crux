@@ -1,16 +1,17 @@
-you,normal,How far are we from our destination?'
-nav,normal,Depends where you hoped we were going
+you,normal,How far are we from our destination?
+nav,normal,Depends where you hoped we were going..
 you,normal,The same place we were headed before? [treasure location]? Where somebody forgot our [treasure]?
 nav,normal,Oh of course. How's the ship goin'?
 you,normal,Everything is normal?
-nav,normal,Might wanna check the direction the ship is headed. I turned it around this mornin' as a test,seems like you failed...
-you,normal,I really need to get a better navigator...
+nav,normal,Might wanna check the direction the ship is headed. I turned it around this mornin' as a test, seems like its no good...
+you,think,I really need to get a better navigator...
 you,normal,So how far are we from [treasure location]?
-nav,think,Like at least seven meters
+nav,think,Like at least seven meters.
 you,normal,...
 you,think,Why do I pay you again?
-nav,normal,You tell me?
+nav,normal,You tell me?!
 nav,normal,Anyways. Why are you bothering me?
-you,normal,There is an island over there? Is that where [treasure location] is?
-nav,normal,Nah. That's just [positive descriptor] island
-you,normal,Why don't we stop there for supplies? Seems like a good place to be...
+you,normal,There's an island nearby, just over the horizon there. Is that where [treasure location] is?
+nav,normal,Nah. That's just [positive descriptor] island.
+you,normal,Why don't we stop there for supplies? Seems like a decent place...
+nav,think,I dunno, why DON'T we? You're the captain after all.
