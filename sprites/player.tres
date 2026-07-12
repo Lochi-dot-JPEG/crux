@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bxr4vncf50myw" path="res://sprites/captain/Untitled115_20260711082650.png" id="6_y87gd"]
 [ext_resource type="Texture2D" uid="uid://dsm4s3hj2extu" path="res://sprites/captain/Untitled115_20260711082911.png" id="7_m53nl"]
 [ext_resource type="Texture2D" uid="uid://cw7sff5cpnwya" path="res://sprites/captain/Untitled115_20260711082810.png" id="8_sokj7"]
-[ext_resource type="Texture2D" uid="uid://mu4txngiet6w" path="res://sprites/captain/Untitled115_20260711204604.png" id="11_re4hw"]
+[ext_resource type="Texture2D" uid="uid://bst6eul5p1qsd" path="res://sprites/captain/Untitled115_20260711083010.png" id="11_re4hw"]
 
 [resource]
 animations = [{
@@ -61,10 +61,10 @@ animations = [{
 "texture": ExtResource("6_y87gd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_m53nl")
+"texture": ExtResource("8_sokj7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_sokj7")
+"texture": ExtResource("7_m53nl")
 }, {
 "duration": 1.0,
 "texture": ExtResource("11_re4hw")

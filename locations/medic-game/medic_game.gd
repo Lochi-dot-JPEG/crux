@@ -2,8 +2,8 @@ extends Node2D
 
 const ICE_SCENE = preload("res://entities/ice/ice.tscn")
 const HEAL_SCENE = preload("res://entities/heals/heals.tscn")
-const LEFT = 410
-const RIGHT = 747
+const LEFT = 310
+const RIGHT = 847
 const PLAYER_SPEED = 300
 const ICE_COOLDOWN = 2
 const HEAL_COOLDOWN = 0.5
@@ -43,9 +43,7 @@ func _start():
 	_finished()
 
 func _finished():
-	if Globals.loaded_save.won_medic == SaveFile.WIN_STATES.UNDETERMINED:
-		Globals.loaded_save.won_medic = SaveFile.WIN_STATES.LOST
-	elif Globals.loaded_save.won_medic == SaveFile.WIN_STATES.WON:
+	if Globals.loaded_save.won_medic == SaveFile.WIN_STATES.WON:
 		Globals.dialogue_played.emit("win-medic")
 		await Globals.finished_dialogue
 	hide()

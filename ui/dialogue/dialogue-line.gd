@@ -14,6 +14,8 @@ static func _load_dialogue_file(name : String) -> Array[DialogueLine]:
 		var instance = DialogueLine.new()
 		instance.character = Globals.NAMES_TO_CHARACTER[line[0]]
 		instance.animation = line[1]
+		if line[1] != "normal" and line[1] != "think":
+			printerr("no good animation! " + str(line[1]))
 		instance.text = line[2]
 		lines.append(instance)
 	return lines

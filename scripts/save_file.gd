@@ -14,7 +14,6 @@ extends Resource
 enum WIN_STATES {
 	UNDETERMINED,
 	WON,
-	LOST,
 }
 
 @export var won_chef : WIN_STATES = WIN_STATES.UNDETERMINED

@@ -10,7 +10,7 @@ border_width_right = 4
 border_width_bottom = 4
 border_color = Color(0, 0, 0, 1)
 
-[node name="Dialogue" type="Control" unique_id=205847605]
+[node name="Dialogue" type="Control" unique_id=205847605 groups=["dialogue"]]
 visible = false
 layout_mode = 3
 anchors_preset = 15

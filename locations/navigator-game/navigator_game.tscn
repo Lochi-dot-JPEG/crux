@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cnoxleol2fn88"]
+
+[node name="NavigatorGame" type="Node2D" unique_id=471453267]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=764412636]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.40813315, 0.5494386, 0.6955621, 1)

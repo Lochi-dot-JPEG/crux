@@ -13,11 +13,120 @@
 [ext_resource type="Texture2D" uid="uid://cy8txyub2p4md" path="res://sprites/ship/boatfront.png" id="10_8yuv6"]
 [ext_resource type="Texture2D" uid="uid://5e4xyia7cw7l" path="res://sprites/ship/Seafront.png" id="12_6apa7"]
 
+[sub_resource type="Animation" id="Animation_pnw17"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("waterback3:scroll_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-3, -668)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("waterback4:scroll_offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(114, -1478)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("waterfront:scroll_offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6apa7"]
+resource_name = "watersway"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("waterback3:scroll_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.9666667, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-3, -668), Vector2(-3, -715.437), Vector2(-3, -668)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("waterback4:scroll_offset")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.93333334, 1.9, 2.8666666, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(114, -1288.552), Vector2(114, -1248), Vector2(114, -1288.552), Vector2(114, -1328), Vector2(114, -1288.552)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("waterfront:scroll_offset")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.9666667, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 100), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0ti17"]
+_data = {
+&"RESET": SubResource("Animation_pnw17"),
+&"watersway": SubResource("Animation_6apa7")
+}
+
 [node name="Ship" type="Node2D" unique_id=1802894920]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=657652156]
+libraries/ = SubResource("AnimationLibrary_0ti17")
+autoplay = &"watersway"
+
+[node name="waterback4" type="Parallax2D" parent="." unique_id=858325572]
+modulate = Color(0.85420114, 0.8583255, 0.99999815, 1)
+z_index = -4096
+scroll_scale = Vector2(0.937, 0.937)
+scroll_offset = Vector2(114, -1478)
+
+[node name="Sprite2D2" type="Sprite2D" parent="waterback4" unique_id=1353180205]
+texture = ExtResource("1_pnw17")
+
+[node name="waterback3" type="Parallax2D" parent="." unique_id=1116279159]
+modulate = Color(0.85420114, 0.8583255, 0.99999815, 1)
+z_index = -4096
+scroll_scale = Vector2(0.98, 0.98)
+scroll_offset = Vector2(-3, -668)
+
+[node name="Sprite2D2" type="Sprite2D" parent="waterback3" unique_id=550442387]
+texture = ExtResource("1_pnw17")
 
 [node name="waterback" type="Parallax2D" parent="." unique_id=594540091]
 modulate = Color(0.85420114, 0.8583255, 0.99999815, 1)
 z_index = -4096
+scroll_offset = Vector2(-3, 10)
 
 [node name="Sprite2D2" type="Sprite2D" parent="waterback" unique_id=1893839645]
 texture = ExtResource("1_pnw17")
@@ -25,7 +134,7 @@ texture = ExtResource("1_pnw17")
 [node name="boatbase" type="Parallax2D" parent="." unique_id=496697037]
 modulate = Color(0.9979226, 0.8676202, 0.6891002, 1)
 self_modulate = Color(0.5752728, 0.31179473, 0.07935459, 1)
-z_index = -4096
+z_index = -1000
 
 [node name="Sprite2D" type="Sprite2D" parent="boatbase" unique_id=1282811136]
 texture = ExtResource("1_yq7c6")
@@ -33,7 +142,7 @@ texture = ExtResource("1_yq7c6")
 [node name="right" type="Parallax2D" parent="." unique_id=1205837665]
 modulate = Color(0.9979226, 0.8676202, 0.6891002, 1)
 self_modulate = Color(0.5752728, 0.31179473, 0.07935459, 1)
-z_index = -4095
+z_index = -40
 
 [node name="Sprite2D" type="Sprite2D" parent="right" unique_id=1165661088]
 texture = ExtResource("2_8yuv6")
@@ -41,7 +150,7 @@ texture = ExtResource("2_8yuv6")
 [node name="left" type="Parallax2D" parent="." unique_id=2039394163]
 modulate = Color(0.9979226, 0.8676202, 0.6891002, 1)
 self_modulate = Color(0.5752728, 0.31179473, 0.07935459, 1)
-z_index = -4094
+z_index = -40
 
 [node name="Sprite2D" type="Sprite2D" parent="left" unique_id=1724008853]
 texture = ExtResource("3_ec3lk")
@@ -53,25 +162,32 @@ self_modulate = Color(0.5752728, 0.31179473, 0.07935459, 1)
 [node name="Sprite2D" type="Sprite2D" parent="stairs" unique_id=638561401]
 texture = ExtResource("4_pnw17")
 
-[node name="Player" parent="." unique_id=1506923292 instance=ExtResource("1_86fik")]
-position = Vector2(1, 2)
+[node name="YSORT" type="Node2D" parent="." unique_id=1573200981]
+y_sort_enabled = true
+
+[node name="Player" parent="YSORT" unique_id=1506923292 instance=ExtResource("1_86fik")]
+position = Vector2(-280, 247)
 scale = Vector2(2, 2)
 
-[node name="Npc" parent="." unique_id=1131074689 instance=ExtResource("2_5674f")]
+[node name="Npc" parent="YSORT" unique_id=1131074689 instance=ExtResource("2_5674f")]
 position = Vector2(464, 207)
 npcEnum = 3
 
-[node name="Npc2" parent="." unique_id=1845248626 instance=ExtResource("2_5674f")]
-position = Vector2(-775, 427)
+[node name="Npc2" parent="YSORT" unique_id=1845248626 instance=ExtResource("2_5674f")]
+position = Vector2(-1244, -157)
 npcEnum = 1
 
-[node name="Npc3" parent="." unique_id=2010972089 instance=ExtResource("2_5674f")]
+[node name="Npc3" parent="YSORT" unique_id=2010972089 instance=ExtResource("2_5674f")]
 position = Vector2(968, -498)
 npcEnum = 2
 
-[node name="Npc4" parent="." unique_id=748060543 instance=ExtResource("2_5674f")]
-position = Vector2(-595, 275)
+[node name="Npc4" parent="YSORT" unique_id=748060543 instance=ExtResource("2_5674f")]
+position = Vector2(-760, 351)
 npcEnum = 4
+
+[node name="Npc5" parent="YSORT" unique_id=648020867 instance=ExtResource("2_5674f")]
+position = Vector2(1039, 109)
+npcEnum = 5
 
 [node name="handle" type="Parallax2D" parent="." unique_id=412141692]
 modulate = Color(0.9979226, 0.8676202, 0.6891002, 1)
@@ -92,7 +208,7 @@ texture = ExtResource("8_0ti17")
 [node name="sailsleft" type="Parallax2D" parent="." unique_id=434296607]
 modulate = Color(0.9979226, 0.8676202, 0.6891002, 1)
 self_modulate = Color(0.5752728, 0.31179473, 0.07935459, 1)
-z_index = 4094
+z_index = -1
 
 [node name="Sprite2D" type="Sprite2D" parent="sailsleft" unique_id=792159674]
 texture = ExtResource("9_1r7i5")
@@ -110,6 +226,7 @@ texture = ExtResource("10_8yuv6")
 [node name="waterfront" type="Parallax2D" parent="." unique_id=1089114699]
 modulate = Color(0.85420114, 0.8583255, 0.99999815, 1)
 z_index = 4096
+scroll_scale = Vector2(1.289, 1.289)
 
 [node name="Sprite2D2" type="Sprite2D" parent="waterfront" unique_id=446086548]
 texture = ExtResource("12_6apa7")
@@ -122,7 +239,7 @@ scale = Vector2(1.667, 1.667)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions/StaticBody2D" unique_id=1030027047]
 modulate = Color(1, 1, 1, 0.14901961)
 position = Vector2(103, 17)
-polygon = PackedVector2Array(387, -315, 164, -71, 122, -44, 101, -115, -510, -124, -617, -140, -488, -3, -651, -131, -632, -262, -919, -169, -1009, -72, -1007, 215, -729, 327, -735, 157, -694, 25, -531, 132, -673, 106, -689, 175, -674, 270, -653.44403, 321.9629, -369, 303, -13, 307, 383, 323, 598, 48, 709, 36, 836, -25, 769, -268, 443, -358, 292, -446, 935, -454, 1096, 142, 711, 280, 717, 433, 719, 609, 270, 561, -142, 575, -553, 578, -975, 536, -1237, 423, -1305, 25, -1183, -276, -678, -439, -131, -528, 481, -395)
+polygon = PackedVector2Array(387, -315, 164, -71, 122, -44, 101, -115, -236.77322, -122.57887, -271.56625, 57.985, -336.3533, 113.17395, -390.3425, 82.58008, -437.13315, -43.39472, -488, -3, -651, -131, -632, -262, -919, -169, -1009, -72, -1007, 215, -729, 327, -735, 157, -694, 25, -554.10974, 129.37071, -673, 106, -689, 175, -674, 270, -653.44403, 321.9629, -369, 303, -13, 307, 383, 323, 598, 48, 589.2615, -91.985, 561.06714, -130.37732, 556.868, -319.9394, 443, -358, 292, -446, 935, -454, 1096, 142, 711, 280, 717, 433, 719, 609, 270, 561, -142, 575, -553, 578, -975, 536, -1237, 423, -1305, 25, -1183, -276, -678, -439, -131, -528, 481, -395)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Collisions" unique_id=2028367548]
 

@@ -14,7 +14,6 @@ var current_line : int = 0
 
 func _ready() -> void:
 	Globals.dialogue_played.connect(_load_dialogue)
-	
 
 
 func _next_line() -> void:
@@ -23,7 +22,9 @@ func _next_line() -> void:
 		loaded_lines = []
 		hide()
 		Globals.dialogue_target_camera(Globals.CHARACTER.YOU)
+		Globals.unfreeze_player.emit()
 		Globals.finished_dialogue.emit()
+		Globals.talk_character = Globals.CHARACTER.NONE
 		return
 	_show_dialogue_line(current_line)
 
@@ -31,13 +32,14 @@ func _next_line() -> void:
 func _show_dialogue_line(line_number : int):
 	var _line : DialogueLine = loaded_lines[line_number]
 	Globals.dialogue_target_camera(_line.character)
+	Globals.freeze_player.emit()
 	show()
-	# TODO load animation here
 	var character_name = await _get_character_name(_line.character)
 	var converted_text = await _substitute_keywords(_line.text)
+	Globals.talk_thinking = _line.animation == "think"
+	Globals.talk_character = _line.character
 	text_label.text = converted_text
 	name_label.text = character_name
-
 
 func _input(event: InputEvent) -> void:
 	if not visible:
@@ -50,12 +52,16 @@ func _ensure_keyword_exists(keyword_id : String):
 
 	if keyword_id not in Globals.loaded_save.keywords.keys():
 		var valid_find = false
-		_show_question("What word captures the crux of " + str(keyword_id).trim_suffix("]").trim_prefix("[")) # TODO dont just use ids
+
+		var trimmed = str(keyword_id).trim_suffix("]").trim_prefix("[")
+		if trimmed in Globals.KEYWORD_QUESTIONS.keys():
+			_show_question(Globals.KEYWORD_QUESTIONS[trimmed])
+		else:
+			_show_question("What word captures the crux of " + trimmed)
 		while not valid_find:
 			await confirm_button.pressed
 			if text_edit.text != "":
 				valid_find = true
-			# TODO confirm if they really want this word
 		Globals.loaded_save.keywords[keyword_id] = text_edit.text
 		question_box.hide()
 
@@ -70,7 +76,6 @@ func _ensure_name_exists(character : Globals.CHARACTER):
 			await confirm_button.pressed
 			if text_edit.text != "":
 				valid_find = true
-			# TODO confirm if they really want this name
 		Globals.loaded_save.character_names[character] = text_edit.text
 		question_box.hide()
 
@@ -81,6 +86,9 @@ func _show_question(question : String):
 	text_edit.placeholder_text = ""
 	question_label.text = question
 	text_edit.text = ""
+	text_edit.editable = false
+	await get_tree().create_timer(0.05).timeout
+	text_edit.editable = true
 
 
 func _substitute_keywords(text) -> String:

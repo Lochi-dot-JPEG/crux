@@ -12,7 +12,7 @@
 [resource]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 10.0,
 "texture": ExtResource("1_5r5f8")
 }, {
 "duration": 1.0,
