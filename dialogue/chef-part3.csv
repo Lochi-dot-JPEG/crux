@@ -1,3 +1,13 @@
 you,normal,I declare the second ingredient of our [best soup type] soup is... [ing2]!
 chef,normal,[ing2] is going in the soup!
 you,normal,I hope this has convinced them to like me...
+cochef,normal,Its not looking so bad...
+chef,think,I still think its missing something.
+cochef,think,Like what?
+cochef,think,(I'm already worried to how she could ruin this...)
+chef,think,We really could use some more salt!
+cochef,normal,...
+cochef,normal,Well, there's been weirder suggestions.
+you,normal,How about we leave it there?
+cochef,think,(Good idea...)
+chef,normal,I guess.
