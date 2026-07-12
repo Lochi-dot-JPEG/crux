@@ -6,7 +6,7 @@ Made for horizons crux.
 
 ## Theme : The crux of storytelling
 
-The crux of storytelling is shown in this game as the ability for storytelling decisions to impact the context of stories.
+The crux of storytelling is shown in this game as the ability for storytelling decisions to impact the context of stories. The players are given the power to change the story by choosing the names of objects within the game world.
 
 ## Dialogue Format
 
@@ -18,7 +18,7 @@ The third value is the line of dialogue to say
 
 e.g.
 
-you,normal,This is what I say
+you,think,This is what I say
 
 ## Screenshots
 
