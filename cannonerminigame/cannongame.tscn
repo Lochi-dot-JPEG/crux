@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dm522v48bf7kk" path="res://cannonerminigame/cannon.tscn" id="1_pvcui"]
 [ext_resource type="Script" uid="uid://blcpv48wkpw2s" path="res://cannonerminigame/cannongame.gd" id="1_rifye"]
+[ext_resource type="Texture2D" uid="uid://cnxxi1sfgdgst" path="res://sprites/ship/seabacksrgb.png" id="3_58b4b"]
 
 [node name="Cannongame" type="Node2D" unique_id=558961751]
 script = ExtResource("1_rifye")
@@ -38,5 +39,10 @@ size_flags_vertical = 0
 theme_override_font_sizes/font_size = 24
 text = "Shoot down the enemy attacks !!"
 horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2032515907]
+position = Vector2(458, 556.00006)
+scale = Vector2(0.6536458, 0.45462963)
+texture = ExtResource("3_58b4b")
 
 [connection signal="timeout" from="targetTimer" to="." method="spawn_new"]
