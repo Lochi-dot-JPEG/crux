@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://bbo4bef8gsmne" path="res://ui/dialogue/dialogue.tscn" id="1_xmswo"]
 [ext_resource type="PackedScene" uid="uid://bdqyfi7cfjg86" path="res://locations/chef-game/chef_game.tscn" id="2_4d6w6"]
 [ext_resource type="PackedScene" uid="uid://nktjmhmqbbht" path="res://locations/medic-game/medic_game.tscn" id="3_e0nub"]
-[ext_resource type="PackedScene" uid="uid://q76ni2cbc8bw" path="res://ui/tasks/tasks.tscn" id="4_w75iv"]
 [ext_resource type="PackedScene" uid="uid://83sp6nfh35fq" path="res://cannonerminigame/cannongame.tscn" id="4_w75iv"]
+[ext_resource type="PackedScene" uid="uid://q76ni2cbc8bw" path="res://ui/tasks/tasks.tscn" id="5_imuuq"]
 
 [node name="Hud" type="Control" unique_id=1234464146]
 layout_mode = 3
@@ -17,15 +17,15 @@ grow_vertical = 2
 [node name="MedicGame" parent="." unique_id=1205038799 groups=["medicgame"] instance=ExtResource("3_e0nub")]
 visible = false
 
-[node name="Dialogue" parent="." unique_id=205847605 instance=ExtResource("1_xmswo")]
+[node name="Cannongame" parent="." unique_id=558961751 groups=["cannongame"] instance=ExtResource("4_w75iv")]
 visible = false
+
+[node name="Dialogue" parent="." unique_id=205847605 instance=ExtResource("1_xmswo")]
 layout_mode = 1
 
 [node name="ChefGame" parent="." unique_id=1928149109 groups=["chefgame"] instance=ExtResource("2_4d6w6")]
 visible = false
 layout_mode = 1
 
-[node name="Tasks" parent="." unique_id=2134214481 instance=ExtResource("4_w75iv")]
+[node name="Tasks" parent="." unique_id=2134214481 instance=ExtResource("5_imuuq")]
 layout_mode = 1
-[node name="Cannongame" parent="." unique_id=558961751 groups=["cannongame"] instance=ExtResource("4_w75iv")]
-visible = false

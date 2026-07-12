@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="crux"
-run/main_scene="uid://bh3nol7uig0r3"
+run/main_scene="uid://tyrg4dwr2d8p"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
