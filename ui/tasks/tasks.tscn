@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://q76ni2cbc8bw"]
+
+[ext_resource type="PackedScene" uid="uid://djqes8av04gk5" path="res://ui/tasks/task.tscn" id="1_jiyds"]
+
+[node name="Tasks" type="Control" unique_id=2134214481]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TasksHolder" type="VBoxContainer" parent="." unique_id=927651181]
+layout_mode = 0
+offset_right = 936.0
+offset_bottom = 470.0
+mouse_filter = 2
+
+[node name="Task" parent="TasksHolder" unique_id=1409140085 instance=ExtResource("1_jiyds")]
+layout_mode = 2
+task_message = "Convince the Chef"
+task_character = 1
+
+[node name="Task2" parent="TasksHolder" unique_id=1806424609 instance=ExtResource("1_jiyds")]
+layout_mode = 2
+task_message = "Convince the Sous-Chef"
+task_character = 4
+
+[node name="Task3" parent="TasksHolder" unique_id=647355837 instance=ExtResource("1_jiyds")]
+layout_mode = 2
+task_message = "Convince the Cannoneer"
+task_character = 3
+
+[node name="Task4" parent="TasksHolder" unique_id=153532349 instance=ExtResource("1_jiyds")]
+layout_mode = 2
+task_message = "Convince the Medic"
+task_character = 2

@@ -16,7 +16,7 @@ var can_move = true
 @onready var timer = Timer.new()
 func _ready() -> void:
 	add_child(timer)
-	timer.wait_time = 2
+	timer.wait_time = 0.5
 	timer.one_shot = false
 	timer.timeout.connect(_rescan_finished)
 	timer.start()
@@ -24,7 +24,7 @@ func _ready() -> void:
 	Globals.unfreeze_player.connect(_unfreeze)
 	Globals.finished_dialogue.connect(_finished_dialogue)
 	Globals.mark_character.emit(Globals.CHARACTER.NONE)
-	await get_tree().create_timer(0.2).timeout
+	await get_tree().create_timer(0.1).timeout
 	Globals.dialogue_played.emit("intro")
 
 
@@ -32,12 +32,16 @@ func _rescan_finished():
 	print("rescanned finished")
 	var confirmed = 0
 	if Globals.loaded_save.won_chef:
+		Globals.complete_task.emit(Globals.CHARACTER.CHEF)
 		confirmed += 1
 	if Globals.loaded_save.won_sous_chef:
+		Globals.complete_task.emit(Globals.CHARACTER.SOUSCHEF)
 		confirmed += 1
 	if Globals.loaded_save.won_cannoneer:
+		Globals.complete_task.emit(Globals.CHARACTER.CANNONEER)
 		confirmed += 1
 	if Globals.loaded_save.won_medic:
+		Globals.complete_task.emit(Globals.CHARACTER.MEDIC)
 		confirmed += 1
 	print("confirmed " + str(confirmed))
 	if confirmed == 4:
