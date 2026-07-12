@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://wt627uxvt6bu" path="res://entities/npc/npc.gd" id="1_e3lg2"]
 [ext_resource type="SpriteFrames" uid="uid://homlyqkfjtjl" path="res://sprites/player.tres" id="2_e3lg2"]
-[ext_resource type="Texture2D" uid="uid://k18oweq263d5" path="res://sprites/captain/capnorm.png" id="3_7bf1a"]
+[ext_resource type="SpriteFrames" uid="uid://dqdxlgyh13wpr" path="res://sprites/arrow.tres" id="3_7bf1a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnpof"]
 size = Vector2(135, 74.5)
@@ -24,9 +24,10 @@ sprite_frames = ExtResource("2_e3lg2")
 animation = &"walk"
 frame_progress = 0.2905108
 
-[node name="Talkking" type="Sprite2D" parent="." unique_id=1714463751]
+[node name="Talkking" type="AnimatedSprite2D" parent="." unique_id=874738694]
 unique_name_in_owner = true
-z_index = 897
+z_index = 4000
 position = Vector2(0, -191.99998)
-scale = Vector2(0.015, 0.015)
-texture = ExtResource("3_7bf1a")
+scale = Vector2(0.298, 0.298)
+sprite_frames = ExtResource("3_7bf1a")
+autoplay = "default"

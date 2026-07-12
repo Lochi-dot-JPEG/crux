@@ -12,7 +12,7 @@ var dialogue_player = false
 var won = false
 # Configure the template
 const MAIN_SCENE_FILE = "res://locations/placeholder/placeholder.tscn"
-const GAME_TITLE = "Your Game Title"
+const GAME_TITLE = "Lost Treasure Fever"
 
 signal dialogue_played(file)
 signal switch_scene(packed_scene : PackedScene)

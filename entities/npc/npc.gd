@@ -2,7 +2,7 @@ extends Node2D
 
 @export var npcEnum : Globals.CHARACTER
 @export var npcAnimatedSprite : AnimatedSprite2D
-@onready var talk_marker : Sprite2D = %Talkking
+@onready var talk_marker : AnimatedSprite2D = %Talkking
 
 func _ready() -> void:
 	add_to_group("characters")
