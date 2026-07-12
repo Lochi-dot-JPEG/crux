@@ -48,6 +48,9 @@ func on_interact():
 			medic_game._start()
 		Globals.CHARACTER.CANNONEER:
 			Globals.dialogue_played.emit("cannon-intro")
+			await Globals.finished_dialogue
+			var cannon_game = get_tree().get_first_node_in_group("cannongame")
+			cannon_game._start()
 		Globals.CHARACTER.YOU:
 			Globals.dialogue_played.emit("test")
 		Globals.CHARACTER.NAVIGATOR:

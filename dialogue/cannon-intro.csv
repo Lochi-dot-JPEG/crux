@@ -1,2 +1,5 @@
-cannon,normal,hello
-you,normal,hello
+cannon,normal,Hey [you]. I we have a slight obstacle.
+cannon,think,On our escape [treasure location]‚ a bunch of other pirates followed us.
+you,normal,They want our [positive descriptor] [treasure]!
+cannon,normal,That's right. Little do they know you're so incompetent that we don't even have it.
+cannon,normal,Well come and help defend us and I might consider forgiving you.

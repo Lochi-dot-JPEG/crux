@@ -2,7 +2,7 @@ you,normal,I am [you]‚ the lone captain of this humble pirate ship.
 you,normal,It is called the [ship name].
 you,normal,The [ship name]'s crew consists of a chef‚ his sous-chef‚ the navigator‚ the cannoneer and the medic.
 chef,normal,Why are you talking to yourself?
-you,normal,I feel the presence of an audience.
+you,think,I feel the presence of an audience.
 chef,normal,Do you want me to introduce myself to this audience too?
 chef,think,([you] is delusional)
 chef,normal,I am [chef]‚ the chef of this ship.
@@ -26,13 +26,13 @@ you,normal,...
 nav,normal,The treasure we found with the priceless map we stole from another pirate crew.
 cannon,normal,The treasure we spent three days hauling out off that island.
 medic,normal,The treasure we stacked neatly at [treasure location].
-chef,normal,The treasure you told us‚ "Don't let me forget."
+chef,normal,The treasure you told us to "not let me forget about".
 you,normal,Ah.
 you,normal,That treasure. It was that...
 you,normal,[treasure]
 chef,normal,Yes. That treasure.
 cannon,normal,You left it at [treasure location].
-nav,normal,and we are currently sailing away from it.
+nav,normal,And we are currently sailing away from it.
 you,normal,I prefer to think of it as strategically stored.
 chef,think,(He's making this up as he goes.)
 cochef,normal,Captain‚ we've been at sea for hours.
@@ -40,10 +40,10 @@ cannon,normal,And instead of turning the ship around...
 medic,normal,...you started talking to an invisible audience.
 chef,normal,You were distracting us.
 you,normal,I assure you it was NOT me.
-you,think,(I must preserve my reputation)
+you,think,(I must preserve my reputation...)
 you,normal,Someone else must have done it.
 nav,think,So...
 nav,normal,Shall we go back?
 you,think,...
 you,normal,Yes‚ but I'll prove to you that there was no way it was my fault.
-you,normal,[nav]‚ prepare for a completely intentional change of course!
+you,normal,[nav]‚ prepare for a completely intentional change‚ of course!

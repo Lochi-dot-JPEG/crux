@@ -2,9 +2,11 @@ extends Node2D
 
 @onready var timer = $targetTimer
 var target = preload("res://cannonerminigame/cannon_target.tscn")
-var score = Globals.scoreCannoner
-func _ready():
-	timer.wait_time = 5
+
+func _start():
+	Globals.freeze_player.emit()
+	show()
+	timer.wait_time = 3
 	timer.start()
 	await timer.timeout
 	
@@ -14,6 +16,10 @@ func spawn_new():
 	add_child(targetNew)
 
 func _process(_delta):
-	if score >= 5:
-		pass
-		#return to main ,,,, ?
+	print("checks")
+	print(Globals.scoreCannoner)
+	if Globals.scoreCannoner >= 5:
+		Globals.loaded_save.won_cannoneer = SaveFile.WIN_STATES.WON
+		Globals.dialogue_played.emit("win-cannoneer")
+		queue_free()
+
