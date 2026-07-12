@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b5qhq55vp3sna"]
+
+[ext_resource type="Script" path="res://cannonerminigame/cannon_target.gd" id="1_b7mq7"]
+[ext_resource type="Texture2D" path="res://sprites/items/target.png" id="2_jty8j"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n1800"]
+radius = 64.070274
+
+[node name="cannon_target" type="Node2D" unique_id=46553560]
+script = ExtResource("1_b7mq7")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2025757044]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=725456111]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_jty8j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1335281740]
+shape = SubResource("CircleShape2D_n1800")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

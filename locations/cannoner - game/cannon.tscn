@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b08c4daq0scia"]
+
+[ext_resource type="Script" path="res://cannonerminigame/cannon.gd" id="1_g68qb"]
+[ext_resource type="Texture2D" path="res://sprites/items/cannon2.png" id="2_gy0hx"]
+
+[node name="cannon" type="Node2D" unique_id=1509060642]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=2028578172]
+position = Vector2(0, 300)
+script = ExtResource("1_g68qb")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=183437527]
+position = Vector2(3, -64)
+texture = ExtResource("2_gy0hx")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1120578636]
