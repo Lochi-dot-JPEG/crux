@@ -1,5 +1,7 @@
 # Lost Treasure Fever
 
+[lochi-makes-games.itch.io/lost-treasure-fever](https://lochi-makes-games.itch.io/lost-treasure-fever)
+
 Talk to people around a pirate ship, you get to name everything in this world.
 
 Made for horizons crux.
